@@ -29,6 +29,11 @@ export type TProps = Omit<React.ComponentProps<'button'>, 'className'> & {
   showLabel?: boolean;
   labelPosition?: IHorizontal | IVertical;
   disabled?: boolean;
+    /**
+   * TError
+   * @type string | boolean
+   */
+  error?: TError,
 };
 
 const IconButton: FC<TProps> = ({
@@ -42,6 +47,7 @@ const IconButton: FC<TProps> = ({
   showLabel,
   labelPosition,
   disabled,
+  error,
   ...props
 }) => {
   const uniqId = `ibutton-${useId()}`;
@@ -112,6 +118,7 @@ const IconButton: FC<TProps> = ({
           styles[size],
         )}
         disabled={disabled}
+        error={error}
         body={buttonBody}
         aria-label={label}
         onClick={handleClick}
