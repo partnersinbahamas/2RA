@@ -1,16 +1,34 @@
 @import '../../../components/utils/styles/styles.scss';
 
-.ibutton {
+%defaultIButtonStyles {
   cursor: pointer;
   width: 100px;
-  position: relative;
   background-color: transparent;
   overflow: hidden;
   border-radius: 50%;
   transition: 0.3s;
   border: 0;
 
+  &[error] {
+    background-color: $red_300;
+    color: $white;
+
+    &:hover {
+      background-color: rgba($color: $red_400, $alpha: 0.8);
+    }
+
+    &:active {
+      background-color: rgba($color: $red_400, $alpha: 0.9);
+    }
+  }
+}
+
+.ibutton {
+  position: relative;
+
   &-default {
+    @extend %defaultIButtonStyles;
+
     &:hover {
       background-color: $cool_gray_100;
     }
@@ -28,21 +46,24 @@
   }
 
   &-primary {
-    background-color: rgba($color: $cyan_300, $alpha: 0.5);
-    color: $white;
+    @extend %defaultIButtonStyles;
+
+    background-color: $blue_200;
+    color: $blue_300;
 
     &:hover {
-      background-color: rgba($color: $cyan_400, $alpha: 0.5);
+      background-color: rgba($color: $blue_300, $alpha: 0.8);
+      color: $blue_200;
     }
 
     &:active {
       transition: 0.5s;
-      background-color: $cyan_300;
+      background-color: $blue_300;
     }
 
     &[disabled] {
       background-color: $blue_400;
-      color: $blue_500;
+      color: $blue_300;
       cursor: not-allowed;
     }
   }
@@ -62,7 +83,7 @@
   }
 
   &-primary {
-    background-color: rgba($color: $blue_300, $alpha: 0.7);
+    background-color: $blue_300;
   }
 
   &-active {
