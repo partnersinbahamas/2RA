@@ -15,7 +15,7 @@ import defaultProps from '../../utils/variables/defaultProps';
 import { TSize, TStile } from '../../utils/types/types';
 import { wait } from '../../utils/functions';
 import { Button } from '../Button/Button';
-import { Label, Wrapper } from './IconButton.styles';
+import { Label, Ripple, Wrapper } from './IconButton.styles';
 import styles from './IconButton.module.scss';
 
 export type TProps = Omit<React.ComponentProps<'button'>, 'className'> & {
@@ -64,7 +64,7 @@ const IconButton: FC<TProps> = ({
   const buttonBody = (
     <>
       {modifiedChildren}
-      <span
+      <Ripple
         data-testid="touch-ripple"
         className={classNames(styles.touch, styles[`touch-${stile}`], {
           [styles['touch-active']]: isPressed,

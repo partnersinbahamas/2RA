@@ -30,3 +30,13 @@ export const Label = styled.label`
   border-radius: 0.25rem;
   text-align: center;
 `;
+
+export const Ripple = styled.span<any>`
+  border-radius: 50%;
+  transition: 0.3s;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+`;
