@@ -14,7 +14,7 @@ exports[`IconButton renders correctly 1`] = `
       type="button"
     >
       <svg
-        class="sc-jTQCzO gnhoWq"
+        class="sc-gLLuof suoVM"
         stroke="currentcolor"
         viewBox="-1 -1 26 26"
         xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ exports[`IconButton renders with visible label 1`] = `
       type="button"
     >
       <svg
-        class="sc-jTQCzO gnhoWq"
+        class="sc-gLLuof suoVM"
         stroke="currentcolor"
         viewBox="-1 -1 26 26"
         xmlns="http://www.w3.org/2000/svg"
