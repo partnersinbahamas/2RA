@@ -39,7 +39,7 @@ export const Button: React.FC<TProps> = ({
   nonTitled,
   ...props
 }) => {
-  const isError = error ? 'true' : false;
+  const isError = error ? 'true' : undefined;
 
   return (
     <ButtonComponent
