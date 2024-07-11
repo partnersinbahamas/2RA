@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { TProps } from './IconButton';
 import { fontTuraRegular } from '../../utils/variables/fonts';
 import { COOL_GRAY_200 } from '../../Colors/colors';
 
@@ -23,7 +22,7 @@ export const Wrapper = styled.div<any>`
   }}
 `;
 
-export const Label = styled.label`
+export const Label = styled.label<any>`
   ${fontTuraRegular};
   background-color: ${COOL_GRAY_200};
   padding: 0 0.25rem;
