@@ -24,6 +24,8 @@ const meta = {
     backgroundColor: story.backgroundColor,
     showLabel: story.boolean,
     labelPosition: story.labelPosition,
+    disabled: story.disabled,
+    error: story.stringError,
   },
 } satisfies Meta<typeof IconButton>;
 
