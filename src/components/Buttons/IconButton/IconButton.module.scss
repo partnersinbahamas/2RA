@@ -70,14 +70,9 @@
 }
 
 .touch {
-  border-radius: 50%;
-  transition: 0.3s;
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
+  &[error] {
+    background-color: $red_400;
+  }
   &-default {
     background-color: rgba($color: $cool_gray_400, $alpha: 0.4);
   }
