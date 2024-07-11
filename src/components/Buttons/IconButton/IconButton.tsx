@@ -20,7 +20,7 @@ import styles from './IconButton.module.scss';
 
 export type TProps = Omit<React.ComponentProps<'button'>, 'className'> & {
   className?: any;
-  children: ReactElement;
+  children?: ReactElement;
   size?: TSize;
   stile?: TStile;
   label?: string;
@@ -29,11 +29,11 @@ export type TProps = Omit<React.ComponentProps<'button'>, 'className'> & {
   showLabel?: boolean;
   labelPosition?: IHorizontal | IVertical;
   disabled?: boolean;
-    /**
+  /**
    * TError
    * @type string | boolean
    */
-  error?: TError,
+  error?: TError;
 };
 
 const IconButton: FC<TProps> = ({
@@ -50,6 +50,7 @@ const IconButton: FC<TProps> = ({
   error,
   ...props
 }) => {
+  const isError = error ? 'true' : undefined;
   const uniqId = `ibutton-${useId()}`;
   const [isPressed, setIsPressed] = useState<boolean>(false);
   const { stylesExtention } = useHD();
@@ -57,8 +58,9 @@ const IconButton: FC<TProps> = ({
     stylesExtention as TStylesExtension,
   ).moduleExtentionState;
 
-  const modifiedChildren = Children.map(children, child =>
-    cloneElement(child, { size: size.toLocaleUpperCase() }),
+  const modifiedChildren = Children.map(
+    children ? children : [],
+    (child: any) => cloneElement(child, { size: size.toLocaleUpperCase() }),
   );
 
   const buttonBody = (
@@ -66,6 +68,7 @@ const IconButton: FC<TProps> = ({
       {modifiedChildren}
       <Ripple
         data-testid="touch-ripple"
+        error={isError}
         className={classNames(styles.touch, styles[`touch-${stile}`], {
           [styles['touch-active']]: isPressed,
         })}
@@ -96,9 +99,14 @@ const IconButton: FC<TProps> = ({
   );
 
   return (
-    <Wrapper labelPosition={labelPosition} className={classes.wrapper}>
+    <Wrapper
+      labelPosition={labelPosition}
+      className={classes.wrapper}
+      error={isError}
+    >
       {showLabel && label && (
         <Label
+          error={isError}
           htmlFor={uniqId}
           style={{ backgroundColor }}
           className={classes.label}
@@ -117,8 +125,8 @@ const IconButton: FC<TProps> = ({
           styles[`ibutton-${stile}`],
           styles[size],
         )}
+        error={disabled ? false : error}
         disabled={disabled}
-        error={error}
         body={buttonBody}
         aria-label={label}
         onClick={handleClick}
