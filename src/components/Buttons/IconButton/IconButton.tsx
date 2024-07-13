@@ -102,30 +102,17 @@ const IconButton: FC<TProps> = ({
     setIsPressed(false);
   };
 
-  const classes = useMemo(
-    () => ({
-      wrapper: className && moduleExtention ? className['wrapper'] : className,
-      label:
-        className && moduleExtention
-          ? className['label']
-          : `${className}-label`,
-      button:
-        className && moduleExtention
-          ? className['button']
-          : `${className}-button`,
-    }),
-    [className, moduleExtention],
-  );
-
   return (
     <Wrapper
       labelPosition={labelPosition}
       className={classes.wrapper}
       error={isError}
+      disabled={disabled}
     >
       {showLabel && label && (
         <Label
           error={isError}
+          disabled={disabled}
           htmlFor={uniqId}
           style={{ backgroundColor }}
           className={classNames(styles[`label-${stile}`], classes.label)}
