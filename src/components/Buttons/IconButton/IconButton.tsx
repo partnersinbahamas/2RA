@@ -109,7 +109,7 @@ const IconButton: FC<TProps> = ({
           error={isError}
           htmlFor={uniqId}
           style={{ backgroundColor }}
-          className={classes.label}
+          className={classNames(styles[`label-${stile}`], classes.label)}
         >
           {label}
         </Label>
