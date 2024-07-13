@@ -70,15 +70,20 @@
 }
 
 .touch {
-  &[error] {
-    background-color: $red_400;
-  }
   &-default {
     background-color: rgba($color: $cool_gray_400, $alpha: 0.4);
+
+    &[error] {
+      background-color: $red_400;
+    }
   }
 
   &-primary {
     background-color: $blue_300;
+
+    &[error] {
+      background-color: $red_400;
+    }
   }
 
   &-active {

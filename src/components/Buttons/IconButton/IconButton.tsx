@@ -63,13 +63,32 @@ const IconButton: FC<TProps> = ({
     (child: any) => cloneElement(child, { size: size.toLocaleUpperCase() }),
   );
 
+  const classes = useMemo(
+    () => ({
+      wrapper: className && moduleExtention ? className['wrapper'] : className,
+      label:
+        className && moduleExtention
+          ? className['label']
+          : `${className}-label`,
+      button:
+        className && moduleExtention
+          ? className['button']
+          : `${className}-button`,
+      ripple:
+        className && moduleExtention
+          ? className['ripple']
+          : `${className}-ripple`,
+    }),
+    [className, moduleExtention],
+  );
+
   const buttonBody = (
     <>
       {modifiedChildren}
       <Ripple
         data-testid="touch-ripple"
         error={isError}
-        className={classNames(styles.touch, styles[`touch-${stile}`], {
+        className={classNames(classes.ripple, styles[`touch-${stile}`], {
           [styles['touch-active']]: isPressed,
         })}
       />
