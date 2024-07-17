@@ -1,8 +1,52 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { DocsPage } from '@storybook/addon-docs';
+import { Description, Source } from '@storybook/blocks';
 import { DataTreeIcon } from '../../Icons';
 import { story } from '../../utils/variables/story';
 import { COOL_GRAY_100 } from '../../Colors/colors';
 import IconButton from './IconButton';
+
+const ICONBUTTON_MODULE_SCSS_STYLES = `
+.wrapper {
+  &[error] {};
+  &[disabled] {};
+}
+
+button.button {
+  &[error] {};
+  &[disabled] {};
+}
+
+label.label {
+  &[error] {};
+  &[disabled] {};
+}
+
+.ripple {
+  &[error] {};
+}
+`;
+
+const ICONBUTTON_SCSS_STYLES = `
+.class {
+  &[error] {};
+  &[disabled] {};
+
+  .class-button {
+    &[error] {};
+    &[disabled] {};
+  }
+
+  .class-label {
+    &[error] {};
+    &[disabled] {};
+  }
+
+  .class-ripple {
+    &[error] {};
+  }
+}
+`;
 
 const meta = {
   title: 'Athomic/Buttons/IconButton',
@@ -10,6 +54,24 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    docs: {
+      page: () => {
+        return (
+          <>
+            <Description>
+              {`/* Please to style your custom IconButton component use the mockup below. */`}
+            </Description>
+
+            <Description markdown={`## Guide styles | .module.scss`} />
+            <Source language="css" code={ICONBUTTON_MODULE_SCSS_STYLES} />
+
+            <Description markdown={`## Guide styles | .scss`} />
+            <Source language="css" code={ICONBUTTON_SCSS_STYLES} />
+            <DocsPage />
+          </>
+        );
+      },
+    },
   },
   args: {
     labelPosition: 'bottom',
