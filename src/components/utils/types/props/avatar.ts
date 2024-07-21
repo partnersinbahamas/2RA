@@ -1,5 +1,5 @@
 import { AvatarProps } from '@mui/material';
-import { TSize, TStile, TStringOrStatus } from '../types';
+import { IAnchorOrigin, TSize, TStile, TStringOrStatus } from '../types';
 
 export type PropsAvatar = Omit<AvatarProps, 'slotProps' | 'component'> & {
   firstName?: string;

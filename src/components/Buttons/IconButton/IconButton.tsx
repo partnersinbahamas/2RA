@@ -12,7 +12,7 @@ import classNames from 'classnames';
 import { useHD } from '../../../providers/HDProvider';
 import useModuleExtention from '../../../hooks/useModuleExtention';
 import defaultProps from '../../utils/variables/defaultProps';
-import { TSize, TStile } from '../../utils/types/types';
+import { IHorizontal, IVertical, TSize, TStile } from '../../utils/types/types';
 import { wait } from '../../utils/functions';
 import { Button } from '../Button/Button';
 import { Label, Ripple, Wrapper } from './IconButton.styles';

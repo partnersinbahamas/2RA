@@ -1,4 +1,4 @@
-import { TSize, TStatus, TStile } from '../types';
+import { IAnchorOrigin, TSize, TStatus, TStile } from '../types';
 
 type TDefaultProps = {
   stile: TStile;
