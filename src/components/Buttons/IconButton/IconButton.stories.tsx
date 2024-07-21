@@ -104,6 +104,15 @@ export const DefaultLabel: TStory = {
   },
 };
 
+export const DefaultDisabled: TStory = {
+  args: {
+    stile: 'default',
+    label: 'Default',
+    showLabel: true,
+    disabled: true,
+  },
+};
+
 export const Primary: TStory = {
   args: {
     stile: 'primary',
@@ -118,7 +127,32 @@ export const PrimaryLabel: TStory = {
   },
 };
 
+export const PrimaryDisabled: TStory = {
+  args: {
+    stile: 'primary',
+    label: 'Primary',
+    showLabel: true,
+    disabled: true,
+  },
+};
+
 export const Mute: TStory = { args: { stile: 'mute' } };
+export const MuteLabel: TStory = {
+  args: {
+    stile: 'mute',
+    label: 'Mute',
+    showLabel: true,
+  },
+};
+
+export const MuteDisabled: TStory = {
+  args: {
+    stile: 'mute',
+    label: 'Mute',
+    showLabel: true,
+    disabled: true,
+  },
+};
 
 export const Backgroup: TStory = {
   args: {
