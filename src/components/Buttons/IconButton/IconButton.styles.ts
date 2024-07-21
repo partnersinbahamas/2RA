@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import { TProps } from './IconButton';
 import { fontTuraRegular } from '../../utils/variables/fonts';
-import { COOL_GRAY_200 } from '../../Colors/colors';
 
 export const Wrapper = styled.div<any>`
   display: flex;
@@ -23,10 +21,19 @@ export const Wrapper = styled.div<any>`
   }}
 `;
 
-export const Label = styled.label`
+export const Label = styled.label<any>`
   ${fontTuraRegular};
-  background-color: ${COOL_GRAY_200};
   padding: 0 0.25rem;
   border-radius: 0.25rem;
   text-align: center;
+`;
+
+export const Ripple = styled.span<any>`
+  border-radius: 50%;
+  transition: 0.3s;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `;

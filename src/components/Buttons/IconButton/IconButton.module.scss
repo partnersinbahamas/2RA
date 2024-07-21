@@ -1,35 +1,114 @@
 @import '../../../components/utils/styles/styles.scss';
 
-.icon {
-  position: relative;
+%defaultIButtonStyles {
+  cursor: pointer;
+  width: 100px;
   background-color: transparent;
   overflow: hidden;
   border-radius: 50%;
   transition: 0.3s;
   border: 0;
 
-  &:hover {
-    background-color: $cool_gray_100;
+  &[error] {
+    background-color: $red_300;
+    color: $white;
+
+    &:hover {
+      background-color: rgba($color: $red_400, $alpha: 0.8);
+    }
+
+    &:active {
+      background-color: rgba($color: $red_400, $alpha: 0.9);
+    }
+  }
+}
+
+.ibutton {
+  position: relative;
+
+  &-default {
+    @extend %defaultIButtonStyles;
+
+    &:hover {
+      background-color: $cool_gray_100;
+    }
+
+    &:active {
+      transition: 0.5s;
+      background-color: rgba($color: $cool_gray_200, $alpha: 0.7);
+    }
+
+    &[disabled] {
+      background-color: $cool_gray_300;
+      color: $cool_gray_500;
+      cursor: not-allowed;
+    }
   }
 
-  &:active {
-    transition: 0.5s;
-    background-color: rgba($color: $cool_gray_300, $alpha: 0.4);
+  &-primary {
+    @extend %defaultIButtonStyles;
+
+    background-color: $blue_200;
+    color: $blue_300;
+
+    &:hover {
+      background-color: rgba($color: $blue_300, $alpha: 0.8);
+      color: $blue_200;
+    }
+
+    &:active {
+      transition: 0.5s;
+      background-color: $blue_300;
+    }
+
+    &[disabled] {
+      background-color: $blue_400;
+      color: $blue_300;
+      cursor: not-allowed;
+    }
   }
 }
 
 .touch {
-  background-color: rgba($color: $cool_gray_300, $alpha: 0.4);
-  border-radius: 50%;
-  transition: 0.3s;
+  &-default {
+    background-color: rgba($color: $cool_gray_400, $alpha: 0.4);
 
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+    &[error] {
+      background-color: $red_400;
+    }
+  }
+
+  &-primary {
+    background-color: $blue_300;
+
+    &[error] {
+      background-color: $red_400;
+    }
+  }
 
   &-active {
     animation: touchRippleWaveAction 0.5s;
+  }
+}
+
+.label {
+  &-default {
+    background-color: $cool_gray_200;
+    
+    &[disabled] {
+      background-color: $cool_gray_300;
+      color: $cool_gray_600;
+    }
+  }
+
+  &-primary {
+    background-color: $blue_200;
+    color: $blue_300;
+
+    &[disabled] {
+      background-color: $blue_400;
+      color: $blue_300;
+    }
   }
 }
 

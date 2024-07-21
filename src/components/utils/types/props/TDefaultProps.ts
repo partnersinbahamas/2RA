@@ -1,4 +1,4 @@
-import { TSize, TStatus, TStile } from '../types';
+import { IAnchorOrigin, TSize, TStatus, TStile } from '../types';
 
 type TDefaultProps = {
   stile: TStile;
@@ -6,6 +6,7 @@ type TDefaultProps = {
   status: TStatus;
   anchorOrigin: IAnchorOrigin;
   buttonType: TButtonType;
+  disablePadding: boolean;
 };
 
 export default TDefaultProps;

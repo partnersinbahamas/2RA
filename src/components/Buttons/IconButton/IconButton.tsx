@@ -4,53 +4,94 @@ import {
   ReactElement,
   cloneElement,
   useId,
-  useRef,
+  useMemo,
   useState,
 } from 'react';
 import classNames from 'classnames';
 
+import { useHD } from '../../../providers/HDProvider';
+import useModuleExtention from '../../../hooks/useModuleExtention';
+import TPropsButton from '../../utils/types/props/button';
 import defaultProps from '../../utils/variables/defaultProps';
-import { TSize } from '../../utils/types/types';
+import { IHorizontal, IVertical, TSize, TStile } from '../../utils/types/types';
 import { wait } from '../../utils/functions';
 import { Button } from '../Button/Button';
-import { Label, Wrapper } from './IconButton.styles';
+import { Label, Ripple, Wrapper } from './IconButton.styles';
 import styles from './IconButton.module.scss';
 
-export type TProps = React.ComponentProps<'button'> & {
-  className?: string;
-  children: ReactElement;
+export type TProps = TPropsButton & {
+  className?: any;
+  children?: ReactElement;
   size?: TSize;
+  stile?: TStile;
   label?: string;
   onClick?: () => void;
   backgroundColor?: string;
   showLabel?: boolean;
   labelPosition?: IHorizontal | IVertical;
+  disabled?: boolean;
+  disablePadding?: boolean;
+  /**
+   * TError
+   * @type string | boolean
+   */
+  error?: TError;
 };
 
 const IconButton: FC<TProps> = ({
   children,
   className,
   size = defaultProps.size,
+  stile = defaultProps.stile,
+  disablePadding = defaultProps.disablePadding,
   label,
   onClick,
   backgroundColor,
   showLabel,
   labelPosition,
+  disabled,
+  error,
   ...props
 }) => {
-  const uniqId = `icon-button-${useId()}`;
+  const isError = error ? 'true' : undefined;
+  const uniqId = `ibutton-${useId()}`;
   const [isPressed, setIsPressed] = useState<boolean>(false);
+  const { stylesExtention } = useHD();
+  const moduleExtention = useModuleExtention(
+    stylesExtention as TStylesExtension,
+  ).moduleExtentionState;
 
-  const modifiedChildren = Children.map(children, child =>
-    cloneElement(child, { size: size.toLocaleUpperCase() }),
+  const modifiedChildren = Children.map(
+    children ? children : [],
+    (child: any) => cloneElement(child, { size: size.toLocaleUpperCase() }),
+  );
+
+  const classes = useMemo(
+    () => ({
+      wrapper: className && moduleExtention ? className['wrapper'] : className,
+      label:
+        className && moduleExtention
+          ? className['label']
+          : `${className}-label`,
+      button:
+        className && moduleExtention
+          ? className['button']
+          : `${className}-button`,
+      ripple:
+        className && moduleExtention
+          ? className['ripple']
+          : `${className}-ripple`,
+    }),
+    [className, moduleExtention],
   );
 
   const buttonBody = (
     <>
       {modifiedChildren}
-      <span
+      <Ripple
         data-testid="touch-ripple"
-        className={classNames(styles.touch, {
+        error={isError}
+        className={classNames(classes.ripple, styles[`touch-${stile}`], {
           [styles['touch-active']]: isPressed,
         })}
       />
@@ -65,9 +106,20 @@ const IconButton: FC<TProps> = ({
   };
 
   return (
-    <Wrapper labelPosition={labelPosition}>
+    <Wrapper
+      labelPosition={labelPosition}
+      className={classes.wrapper}
+      error={isError}
+      disabled={disabled}
+    >
       {showLabel && label && (
-        <Label htmlFor={uniqId} style={{ backgroundColor }}>
+        <Label
+          error={isError}
+          disabled={disabled}
+          htmlFor={uniqId}
+          style={{ backgroundColor }}
+          className={classNames(styles[`label-${stile}`], classes.label)}
+        >
           {label}
         </Label>
       )}
@@ -76,13 +128,20 @@ const IconButton: FC<TProps> = ({
         {...props}
         stile="mute"
         size={size}
-        className={classNames(styles.icon, styles[size], className)}
+        className={classNames(
+          classes.button,
+          styles.ibutton,
+          styles[`ibutton-${stile}`],
+          styles[size],
+        )}
+        error={disabled ? false : error}
+        disabled={disabled}
         body={buttonBody}
         aria-label={label}
         onClick={handleClick}
         onMouseDown={() => setIsPressed(true)}
         style={{ backgroundColor }}
-        disablePadding
+        disablePadding={disablePadding}
         nonTitled
       />
     </Wrapper>
