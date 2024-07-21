@@ -11,6 +11,7 @@ import classNames from 'classnames';
 
 import { useHD } from '../../../providers/HDProvider';
 import useModuleExtention from '../../../hooks/useModuleExtention';
+import TPropsButton from '../../utils/types/props/button';
 import defaultProps from '../../utils/variables/defaultProps';
 import { IHorizontal, IVertical, TSize, TStile } from '../../utils/types/types';
 import { wait } from '../../utils/functions';
@@ -18,7 +19,7 @@ import { Button } from '../Button/Button';
 import { Label, Ripple, Wrapper } from './IconButton.styles';
 import styles from './IconButton.module.scss';
 
-export type TProps = Omit<React.ComponentProps<'button'>, 'className'> & {
+export type TProps = TPropsButton & {
   className?: any;
   children?: ReactElement;
   size?: TSize;
@@ -29,6 +30,7 @@ export type TProps = Omit<React.ComponentProps<'button'>, 'className'> & {
   showLabel?: boolean;
   labelPosition?: IHorizontal | IVertical;
   disabled?: boolean;
+  disablePadding?: boolean;
   /**
    * TError
    * @type string | boolean
@@ -41,6 +43,7 @@ const IconButton: FC<TProps> = ({
   className,
   size = defaultProps.size,
   stile = defaultProps.stile,
+  disablePadding = defaultProps.disablePadding,
   label,
   onClick,
   backgroundColor,
@@ -138,7 +141,7 @@ const IconButton: FC<TProps> = ({
         onClick={handleClick}
         onMouseDown={() => setIsPressed(true)}
         style={{ backgroundColor }}
-        disablePadding
+        disablePadding={disablePadding}
         nonTitled
       />
     </Wrapper>
