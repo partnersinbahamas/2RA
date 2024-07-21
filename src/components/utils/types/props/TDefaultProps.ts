@@ -6,6 +6,7 @@ type TDefaultProps = {
   status: TStatus;
   anchorOrigin: IAnchorOrigin;
   buttonType: TButtonType;
+  disablePadding: boolean;
 };
 
 export default TDefaultProps;

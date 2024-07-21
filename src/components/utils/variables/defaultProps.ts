@@ -9,6 +9,7 @@ const defaultProps: TDefaultProps = {
     horizontal: 'right',
   },
   buttonType: 'button',
+  disablePadding: true,
 };
 
 export default defaultProps;
