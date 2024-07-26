@@ -1,0 +1,24 @@
+@import '../utils/styles/styles.scss';
+
+.article {
+  &-default {
+    @extend %fontTuraRegular;
+
+    &-variables {
+      padding: 0.1rem;
+      background-color: $cool_gray_200;
+      border-bottom: 2px solid $cool_gray_300;
+    }
+  }
+
+  &-primary {
+    @extend %fontTuraRegular;
+
+    &-variables {
+      padding: 0.1rem;
+      background-color: $blue_300;
+      color: $white;
+      border-bottom: 2px solid $blue_400;
+    }
+  }
+}
