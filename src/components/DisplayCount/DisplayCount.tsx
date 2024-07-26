@@ -35,14 +35,27 @@ const DisplayCount: React.FC<TProps> = ({
   const modifiedX = fixTo?.length ? numberFixTo(x, fixTo) : x;
   const modifiedY = fixTo?.length ? numberFixTo(y, fixTo) : y;
 
+  const stiles = {
+    article: styles[`article-${stile}`],
+    variables: styles[`article-${stile}-variables`],
+    x: styles[`article-${stile}-x`],
+    y: styles[`article-${stile}-y`],
+  };
+
   const modifiedText = text
-    .replace(/\bX+\b/g, `<strong>${modifiedX}</strong>`)
-    .replace(/\bY+\b/g, `<strong>${modifiedY}</strong>`);
+    .replace(
+      /\bX+\b/g,
+      `<strong class="${stiles.x} ${stiles.variables}">${modifiedX}</strong>`,
+    )
+    .replace(
+      /\bY+\b/g,
+      `<strong class="${stiles.y} ${stiles.variables}">${modifiedY}</strong>`,
+    );
 
   const messageHTML = { __html: modifiedText };
 
   return (
-    <article dangerouslySetInnerHTML={messageHTML} />
+    <article className={stiles.article} dangerouslySetInnerHTML={messageHTML} />
   );
 };
 
