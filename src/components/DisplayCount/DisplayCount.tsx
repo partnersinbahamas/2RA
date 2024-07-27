@@ -10,7 +10,7 @@ import defaultProps from '../utils/variables/defaultProps';
 import { TStile } from '../utils/types/types';
 import styles from './DisplayCount.module.scss';
 
-type TProps = {
+type TProps = TArticleProps & {
   text: string;
   x: number | string;
   y: number | string;
@@ -42,20 +42,40 @@ const DisplayCount: React.FC<TProps> = ({
     y: styles[`article-${stile}-y`],
   };
 
+  const classes = {
+    displayCount:
+      className && modulesExtension ? className.displayCount : className,
+    variables:
+      className && modulesExtension
+        ? className['displayCount-variables']
+        : `${className}-variables`,
+    x:
+      className && modulesExtension
+        ? className['displayCount-x']
+        : `${className}-x`,
+    y:
+      className && modulesExtension
+        ? className['displayCount-y']
+        : `${className}-y`,
+  };
+
   const modifiedText = text
     .replace(
       /\bX+\b/g,
-      `<strong class="${stiles.x} ${stiles.variables}">${modifiedX}</strong>`,
+      `<strong class="${stiles.x} ${stiles.variables} ${classes.variables} ${classes.x}">${modifiedX}</strong>`,
     )
     .replace(
       /\bY+\b/g,
-      `<strong class="${stiles.y} ${stiles.variables}">${modifiedY}</strong>`,
+      `<strong class="${stiles.y} ${stiles.variables} ${classes.variables} ${classes.y}">${modifiedY}</strong>`,
     );
 
   const messageHTML = { __html: modifiedText };
 
   return (
-    <article className={stiles.article} dangerouslySetInnerHTML={messageHTML} />
+    <article
+      className={classNames(stiles.article, classes.displayCount)}
+      dangerouslySetInnerHTML={messageHTML}
+    />
   );
 };
 
