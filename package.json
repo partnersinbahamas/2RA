@@ -7,13 +7,14 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.12",
+    "@storybook/react-vite": "^8.2.6",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.87",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
+    "@vitejs/plugin-react": "^4.3.1",
     "classnames": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,9 +22,11 @@
     "sass": "^1.71.1",
     "styled-components": "^6.1.8",
     "typescript": "^4.9.5",
+    "vite-plugin-inspect": "^0.8.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "vite",
     "start": "storybook dev -p 6006",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -62,6 +65,7 @@
     "@storybook/addon-links": "^8.2.6",
     "@storybook/addon-onboarding": "^8.2.6",
     "@storybook/blocks": "^8.2.6",
+    "@storybook/builder-vite": "^8.2.6",
     "@storybook/preset-create-react-app": "^8.2.6",
     "@storybook/react": "^8.2.6",
     "@storybook/react-webpack5": "^8.2.6",
@@ -77,6 +81,7 @@
     "prop-types": "^15.8.1",
     "storybook": "^8.2.6",
     "typescript-eslint": "^7.8.0",
+    "vite": "^5.3.5",
     "webpack": "^5.90.3"
   }
 }
