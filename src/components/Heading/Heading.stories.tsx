@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Heading from './Heading';
 import { story } from '../utils/variables/story';
+import { ArgTypes } from 'storybook/internal/types';
 
 const meta = {
   title: 'Athomic/Heading',
@@ -10,7 +11,7 @@ const meta = {
   argTypes: {
     level: { control: { type: 'number', min: 1, max: 6 } },
     children: story.children,
-  },
+  } as ArgTypes,
 } satisfies Meta<typeof Heading>;
 export default meta;
 
