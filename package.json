@@ -1,5 +1,13 @@
 {
   "name": "2RA",
+  "main": "build/Button.mjs",
+  "module": "build/Button.umd.js",
+  "exports": {
+    ".": {
+      "import": "./build/2RA.mjs",
+      "require": "./build/2RA.umd.js"
+    }
+  },
   "homepage": "https://github.com/partnersinbahamas/2RA",
   "version": "0.1.0",
   "private": true,
@@ -29,6 +37,7 @@
     "dev": "vite",
     "start": "storybook dev -p 6006",
     "build": "react-scripts build",
+    "vbuild": "tsc -b && vite build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
