@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { DocsPage } from '@storybook/addon-docs';
-import { Description, Source } from '@storybook/blocks';
+import { Markdown, Source, Subtitle } from '@storybook/blocks';
 import { DataTreeIcon } from '../../Icons';
 import { story } from '../../utils/variables/story';
 import { COOL_GRAY_100 } from '../../Colors/colors';
@@ -59,20 +59,22 @@ const meta = {
       page: () => {
         return (
           <>
-            <Description>
-              {`/* Please to style your custom IconButton component use the mockup below. */`}
-            </Description>
-
-            <Description markdown={`## Guide styles | .module.scss`} />
+            <Subtitle>
+              Please to style your custom IconButton component use the mockup
+              below.
+            </Subtitle>
+            <Markdown>Guide styles | .module.scss</Markdown>
             <Source language="css" code={ICONBUTTON_MODULE_SCSS_STYLES} />
 
-            <Description markdown={`## Guide styles | .scss`} />
+            <Markdown>Guide styles | .scss</Markdown>
             <Source language="css" code={ICONBUTTON_SCSS_STYLES} />
             <DocsPage />
           </>
         );
       },
     },
+
+    code: 'if (true) return;',
   },
   args: {
     labelPosition: 'bottom',

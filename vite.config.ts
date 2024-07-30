@@ -19,7 +19,7 @@ export default defineConfig({
           return `${name}.js`
         }
 
-        return `${name}.${format}`;
+        return `${name}.${format}.js`;
       }
     },
     rollupOptions: {
