@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 import { story } from '../../utils/variables/story';
+import { ArgTypes } from 'storybook/internal/types';
 
 const meta = {
   title: 'Athomic/Buttons/Button',
@@ -14,7 +15,7 @@ const meta = {
     title: story.title,
     disabled: story.disabled,
     error: story.stringError,
-  },
+  } as ArgTypes,
   parameters: {
     layout: 'centered',
     docs: {

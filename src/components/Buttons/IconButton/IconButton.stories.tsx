@@ -5,6 +5,7 @@ import { DataTreeIcon } from '../../Icons';
 import { story } from '../../utils/variables/story';
 import { COOL_GRAY_100 } from '../../Colors/colors';
 import IconButton from './IconButton';
+import { ArgTypes } from 'storybook/internal/types';
 
 const ICONBUTTON_MODULE_SCSS_STYLES = `
 .wrapper {
@@ -88,7 +89,7 @@ const meta = {
     labelPosition: story.labelPosition,
     disabled: story.disabled,
     error: story.stringError,
-  },
+  } as ArgTypes,
 } satisfies Meta<typeof IconButton>;
 
 export default meta;
