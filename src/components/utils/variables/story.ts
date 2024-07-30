@@ -1,5 +1,7 @@
+import { IStoryControl } from '../types/types';
+
 // NOTE: story controls-options object;
-export const story = {
+export const story: IStoryControl = {
   // controles
   name: { control: 'text' },
   abbreviation: { control: 'text' },

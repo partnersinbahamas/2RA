@@ -1,3 +1,6 @@
+import { ControlType } from '@storybook/blocks';
+import { Conditional, SBScalarType, SBType } from 'storybook/internal/types';
+
 export type TSize = 'small' | 'medium' | 'large';
 
 export type IHorizontal = 'left' | 'right';
@@ -10,6 +13,7 @@ export interface IAnchorOrigin {
 
 export type TStile = 'primary' | 'default' | 'mute';
 
+export type TStringOrStatus = TStatus | string;
 export type TStatus =
   | 'online'
   | 'default'
@@ -17,4 +21,27 @@ export type TStatus =
   | 'not-here'
   | 'sleep'
   | 'primary';
-export type TStringOrStatus = TStatus | string;
+
+export interface IStoryControl {
+  [key: string]: {
+    control?:
+      | 'child'
+      | ControlType
+      | { type: ControlType /* See below for more */ }
+      | false;
+    description?: string;
+    if?: Conditional;
+    mapping?: { [key: string]: { [option: string]: any } };
+    name?: string;
+    options?: string[];
+    action?: string;
+    table?: {
+      category?: string;
+      defaultValue?: { summary: string; detail?: string };
+      disable?: boolean;
+      subcategory?: string;
+      type?: { summary?: string; detail?: string };
+    };
+    type?: SBType | SBScalarType['name'];
+  };
+}
