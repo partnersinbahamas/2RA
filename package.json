@@ -3,9 +3,13 @@
   "main": "build/Button.mjs",
   "module": "build/Button.umd.js",
   "exports": {
-    ".": {
-      "import": "./build/2RA.mjs",
-      "require": "./build/2RA.umd.js"
+    "./Button": {
+      "import": "./build/Button.js",
+      "require": "./build/Button.cjs"
+    },
+    "./IconButton": {
+      "import": "./build/IconButton.js",
+      "require": "./build/IconButton.cjs"
     }
   },
   "homepage": "https://github.com/partnersinbahamas/2RA",
