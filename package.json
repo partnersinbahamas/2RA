@@ -2,6 +2,7 @@
   "name": "2RA",
   "main": "build/Button.mjs",
   "module": "build/Button.umd.js",
+  "types": "build/index.d.ts",
   "exports": {
     "./Button": {
       "import": "./build/Button.js",
@@ -12,6 +13,7 @@
       "require": "./build/IconButton.cjs"
     }
   },
+  "files": ["/build"],
   "homepage": "https://github.com/partnersinbahamas/2RA",
   "version": "0.1.0",
   "private": true,
