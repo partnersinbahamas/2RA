@@ -33,6 +33,8 @@ export default defineConfig({
         },
       },
     },
+    sourcemap: true,
+    emptyOutDir: true,
     outDir: 'build' // Ensure this matches the directory you're using in gh-pages
   },
   plugins: [
