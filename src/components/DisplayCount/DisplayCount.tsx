@@ -62,11 +62,11 @@ const DisplayCount: React.FC<TProps> = ({
   const modifiedText = text
     .replace(
       /\bX+\b/g,
-      `<strong class="${stiles.x} ${stiles.variables} ${classes.variables} ${classes.x}">${modifiedX}</strong>`,
+      `<strong class="${stiles.x} ${stiles.variables} ${classes.variables} ${classes.x}" data-testid="displayCount-x">${modifiedX}</strong>`,
     )
     .replace(
       /\bY+\b/g,
-      `<strong class="${stiles.y} ${stiles.variables} ${classes.variables} ${classes.y}">${modifiedY}</strong>`,
+      `<strong class="${stiles.y} ${stiles.variables} ${classes.variables} ${classes.y}" data-testid="displayCount-y">${modifiedY}</strong>`,
     );
 
   const messageHTML = { __html: modifiedText };

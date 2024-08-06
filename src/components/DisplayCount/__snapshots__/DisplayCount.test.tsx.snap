@@ -1,0 +1,415 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DisplayCount renders correctly 1`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.7
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders correctly 2`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.7
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 1`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.7
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.0
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 2`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.70
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.00
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 3`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.700
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 4`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.7000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.0000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 5`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.70000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.00000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 6`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.700000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.000000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 7`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.7000000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.0000000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 8`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.70000000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.00000000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 9`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.700000000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.000000000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 10`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.7000000000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.0000000000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 11`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.70000000000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.00000000000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 12`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.700000000000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.000000000000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 13`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.7000000000000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.0000000000000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 14`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.70000000000000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.00000000000000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 15`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.700000000000000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.000000000000000
+    </strong>
+  </article>
+</div>
+`;
+
+exports[`DisplayCount renders with fixTo 16`] = `
+<div>
+  <article
+    class="article-default"
+  >
+    Display 
+    <strong
+      class="article-default-x article-default-variables undefined-variables undefined-x"
+      data-testid="displayCount-x"
+    >
+      0.7000000000000000
+    </strong>
+     / 
+    <strong
+      class="article-default-y article-default-variables undefined-variables undefined-y"
+      data-testid="displayCount-y"
+    >
+      1.0000000000000000
+    </strong>
+  </article>
+</div>
+`;
