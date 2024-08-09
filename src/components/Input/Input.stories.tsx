@@ -4,6 +4,7 @@ import { within, userEvent } from '@storybook/test';
 import { ConnectOnChange } from '../../../.storybook/decorators';
 import { story } from '../utils/variables/story';
 import { Input } from './Input';
+import { ArgTypes } from 'storybook/internal/types';
 
 const meta = {
   title: 'Athomic/Input',
@@ -22,7 +23,7 @@ const meta = {
     type: story.inputType,
     onChange: story.onChange,
     className: story.className,
-  },
+  } as ArgTypes,
   parameters: {
     docs: {
       description: {
