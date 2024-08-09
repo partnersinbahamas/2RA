@@ -6,6 +6,9 @@
       "dom.iterable",
       "esnext"
     ],
+    "paths": {
+      "2ra": ["./lib/main"],
+    },
     "declaration": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -23,6 +26,7 @@
     // "typeRoots": ["./build/index.d.ts"], // needs to check
   },
   "include": [
-    "src"
+    "src",
+    "lib"
   ],
 }
