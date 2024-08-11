@@ -11,6 +11,7 @@ export default defineConfig({
     lib: {
       entry: [
         path.resolve(__dirname, 'lib/main.ts'),
+        path.resolve(__dirname, 'lib/colors.ts'),
       ],
       name: '2ra-ui',
       fileName: (format, name) => {
