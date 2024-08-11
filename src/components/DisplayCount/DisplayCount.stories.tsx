@@ -1,7 +1,9 @@
+import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import DisplayCount from './DisplayCount';
 import { story } from '../utils/variables/story';
-import { Description, DocsPage, Source } from '@storybook/blocks';
+import { DocsPage, Markdown, Source, Subtitle } from '@storybook/blocks';
+import { ArgTypes } from 'storybook/internal/types';
 
 const DISPLAY_COUNT_MODULES_SCSS_STYLES = `
 .displayCount {
@@ -29,15 +31,16 @@ const meta = {
       page: () => {
         return (
           <>
-            <Description>
-              {`/* Please to style your custom DisplayCount component use the mockup below. */`}
-            </Description>
+            <Subtitle>
+              Please to style your custom DisplayCount component use the mockup below.
+            </Subtitle>
 
-            <Description markdown={`## Guide styles | .module.scss`} />
+            <Markdown>Guide styles | .module.scss</Markdown>
             <Source language="css" code={DISPLAY_COUNT_MODULES_SCSS_STYLES} />
 
-            <Description markdown={`## Guide styles | .scss`} />
+            <Markdown>Guide styles | .scss</Markdown>
             <Source language="css" code={DISPLAY_COUNT_SCSS_STYLES} />
+
             <DocsPage />
           </>
         );
@@ -56,7 +59,7 @@ const meta = {
     y: { control: 'text' } || { control: 'number' },
     fixTo: { control: 'text' },
     className: story.className,
-  },
+  } as ArgTypes,
 } satisfies Meta<typeof DisplayCount>;
 export default meta;
 
