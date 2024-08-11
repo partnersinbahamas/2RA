@@ -11,6 +11,8 @@
       "2ra-ui/colors": ["./src/components/Colors/colors"]
     },
     "declaration": true,
+    "declarationMap": true,  
+    "outDir": "./dist",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
