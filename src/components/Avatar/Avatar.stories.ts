@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import HDLogo from '../../images/logos/hd-logo-dark-small.png';
 import { Avatar } from '../Avatar/Avatar';
 import { story } from '../utils/variables/story';
+import { ArgTypes } from 'storybook/internal/types';
 
 /**
  * Avatar conponent with user picture and fullname.
@@ -45,7 +46,7 @@ const meta = {
         },
       },
     },
-  },
+  } as ArgTypes,
   parameters: {
     layout: 'centered',
     docs: {

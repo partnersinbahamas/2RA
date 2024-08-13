@@ -6,6 +6,13 @@
       "dom.iterable",
       "esnext"
     ],
+    "paths": {
+      "2ra": ["./lib/main"],
+      "2ra-ui/colors": ["./src/components/Colors/colors"]
+    },
+    "declaration": true,
+    "declarationMap": true,  
+    "outDir": "./dist",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +25,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    // "typeRoots": ["./build/index.d.ts"], // needs to check
   },
   "include": [
-    "src"
+    "src",
+    "lib"
   ],
 }
