@@ -8,10 +8,10 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
+    outDir: 'lib',
     lib: {
       entry: [
-        path.resolve(__dirname, 'lib/main.ts'),
-        path.resolve(__dirname, 'lib/colors.ts'),
+        path.resolve(__dirname, 'src/index.ts'),
       ],
       name: '2ra-ui',
       fileName: (format, name) => {
@@ -39,9 +39,6 @@ export default defineConfig({
     react(),
     Inspect(),
     tsconfigPaths(),
-    dts({
-      // insertTypesEntry: true,
-      rollupTypes: true,
-    }),
+    dts(),
   ],
 })

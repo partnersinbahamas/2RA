@@ -1,26 +1,20 @@
 {
   "name": "2ra-ui",
-  "main": "./dist/main.cjs.js",
-  "module": "./dist/main.js",
-  "types": "./dist/main.d.ts",
-  "style": "./dist/style.css",
+  "main": "./lib/index.umd.js",
+  "module": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/main.js",
-      "require": "./dist/main.cjs.js"
-    },
-    "./colors": {
-      "import": "./dist/colors.js",
-      "require": "./dist/colors.cjs.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+      "import": "./lib/index.js",
+      "require": "./lib/index.umd.js"
+    }
   },
   "files": [
     "dist"
   ],
   "homepage": "https://github.com/partnersinbahamas/2RA",
-  "version": "0.0.5",
+  "version": "0.1.4",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
@@ -34,6 +28,7 @@
     "@types/react-dom": "^18.2.21",
     "@vitejs/plugin-react": "^4.3.1",
     "classnames": "^2.5.1",
+    "copyfiles": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -49,7 +44,7 @@
     "start": "storybook dev -p 6006",
     "rbuild": "react-scripts build",
     "build": "tsc -b && vite build",
-    "prebuild": "rm -rf dist",
+    "prebuild": "rm -rf lib",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

@@ -1,18 +1,16 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "outDir": "lib",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "paths": {
-      "2ra": ["./lib/main"],
-      "2ra-ui/colors": ["./src/components/Colors/colors"]
+      "2ra": ["./lib/index"],
     },
     "declaration": true,
-    "declarationMap": true,  
-    "outDir": "./dist",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,16 +18,25 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
     "jsx": "react-jsx",
-    // "typeRoots": ["./build/index.d.ts"], // needs to check
+    "module": "ESNext",
   },
-  "include": [
-    "src",
-    "lib"
-  ],
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "src/__tests__",
+    "**/*.test.tsx",
+    "**/*.test.ts",
+    "**/*.test.jsx",
+    "**/*.test.js",
+    "**/decorators.tsx",
+    "lib",
+    "**/*.stories.tsx",
+    "**/*.stories.ts",
+    "src/App.tsx"
+  ]
 }
