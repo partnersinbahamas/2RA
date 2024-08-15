@@ -34,7 +34,6 @@
     "**/*.test.jsx",
     "**/*.test.js",
     "**/decorators.tsx",
-    "lib",
     "**/*.stories.tsx",
     "**/*.stories.ts",
     "src/App.tsx"

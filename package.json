@@ -11,7 +11,7 @@
     }
   },
   "files": [
-    "dist"
+    "/lib"
   ],
   "homepage": "https://github.com/partnersinbahamas/2RA",
   "version": "0.1.4",
