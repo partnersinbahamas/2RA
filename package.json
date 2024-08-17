@@ -14,7 +14,7 @@
     "/lib"
   ],
   "homepage": "https://github.com/partnersinbahamas/2RA",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
@@ -44,8 +44,9 @@
     "dev": "vite",
     "start": "storybook dev -p 6006",
     "rbuild": "react-scripts build",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run copy-files",
     "prebuild": "rm -rf lib",
+    "copy-files": "copyfiles -u 1 src/components/utils/styles/colors.scss src/components/utils/styles/fonts.scss lib",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
