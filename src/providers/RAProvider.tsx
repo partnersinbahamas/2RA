@@ -1,17 +1,17 @@
 import React, { useMemo, useState } from 'react';
 
-const HDContext = React.createContext({
+const RAContext = React.createContext({
   stylesExtention: '.scss',
 });
 
-export const useHD = () => React.useContext(HDContext);
+export const useRA = () => React.useContext(RAContext);
 
 type TProps = {
   children: React.ReactNode;
   extension: TStylesExtension;
 };
 
-export const HDProvider: React.FC<TProps> = ({
+export const RAProvider: React.FC<TProps> = ({
   children,
   extension = '.scss',
 }) => {
@@ -22,6 +22,6 @@ export const HDProvider: React.FC<TProps> = ({
   );
 
   return (
-    <HDContext.Provider value={providerValues}>{children}</HDContext.Provider>
+    <RAContext.Provider value={providerValues}>{children}</RAContext.Provider>
   );
 };
