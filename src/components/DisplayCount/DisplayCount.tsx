@@ -6,7 +6,6 @@ import useModuleExtention from '../../hooks/useModuleExtention';
 
 import TArticleProps from '../utils/types/props/article';
 import { numberFixTo } from '../utils/functions';
-import defaultProps from '../utils/variables/defaultProps';
 import { TStile } from '../utils/types/types';
 import styles from './DisplayCount.module.scss';
 
@@ -24,22 +23,24 @@ const DisplayCount: React.FC<TProps> = ({
   x,
   y,
   fixTo,
-  stile = defaultProps.stile,
+  stile,
   className,
 }) => {
-  const { stylesExtention } = useRA();
+  const { stylesExtention, componentsStile } = useRA();
   const modulesExtension = useModuleExtention(
     stylesExtention as TStylesExtension,
   ).moduleExtentionState;
+
+  const visibleStile = stile || componentsStile;
 
   const modifiedX = fixTo?.length ? numberFixTo(x, fixTo) : x;
   const modifiedY = fixTo?.length ? numberFixTo(y, fixTo) : y;
 
   const stiles = {
-    article: styles[`article-${stile}`],
-    variables: styles[`article-${stile}-variables`],
-    x: styles[`article-${stile}-x`],
-    y: styles[`article-${stile}-y`],
+    article: styles[`article-${visibleStile}`],
+    variables: styles[`article-${visibleStile}-variables`],
+    x: styles[`article-${visibleStile}-x`],
+    y: styles[`article-${visibleStile}-y`],
   };
 
   const classes = {
