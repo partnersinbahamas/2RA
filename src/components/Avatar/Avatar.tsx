@@ -3,7 +3,7 @@ import { AvatarSlots, Badge } from '@mui/material';
 import classNames from 'classnames';
 
 import useModuleExtention from '../../hooks/useModuleExtention';
-import { useHD } from '../../providers/HDProvider';
+import { useRA } from '../../providers/RAProvider';
 import useMute from '../../hooks/useMute';
 import AvatarComponent from '../2RA/AvatarComponent';
 import BoxComponent from '../2RA/BoxComponent';
@@ -55,7 +55,7 @@ export const Avatar: React.FC<IProps> = ({
   ...props
 }) => {
   const { muteState } = useMute(stile);
-  const { stylesExtention } = useHD();
+  const { stylesExtention } = useRA();
   const moduleExtention = useModuleExtention(
     stylesExtention as TStylesExtension,
   ).moduleExtentionState;
