@@ -11,7 +11,7 @@ import {
   Heading,
 } from './Input.styles';
 import styles from './Input.module.scss';
-import { useHD } from '../../providers/HDProvider';
+import { useRA } from '../../providers/RAProvider';
 import usePrime from '../../hooks/usePrime';
 import useModuleExtention from '../../hooks/useModuleExtention';
 
@@ -40,7 +40,7 @@ export const Input: React.FC<TProps> = ({
   className,
   ...props
 }) => {
-  const { stylesExtention } = useHD();
+  const { stylesExtention } = useRA();
   const moduleExtention = useModuleExtention(
     stylesExtention as TStylesExtension,
   ).moduleExtentionState;

@@ -1,7 +1,7 @@
 import PropsTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { useHD } from '../../providers/HDProvider';
+import { useRA } from '../../providers/RAProvider';
 import useModuleExtention from '../../hooks/useModuleExtention';
 
 import TArticleProps from '../utils/types/props/article';
@@ -27,7 +27,7 @@ const DisplayCount: React.FC<TProps> = ({
   stile = defaultProps.stile,
   className,
 }) => {
-  const { stylesExtention } = useHD();
+  const { stylesExtention } = useRA();
   const modulesExtension = useModuleExtention(
     stylesExtention as TStylesExtension,
   ).moduleExtentionState;

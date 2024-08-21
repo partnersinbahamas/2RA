@@ -9,7 +9,7 @@ import {
 } from 'react';
 import classNames from 'classnames';
 
-import { useHD } from '../../../providers/HDProvider';
+import { useRA } from '../../../providers/RAProvider';
 import useModuleExtention from '../../../hooks/useModuleExtention';
 import TPropsButton from '../../utils/types/props/button';
 import defaultProps from '../../utils/variables/defaultProps';
@@ -56,7 +56,7 @@ const IconButton: FC<TProps> = ({
   const isError = error ? 'true' : undefined;
   const uniqId = `ibutton-${useId()}`;
   const [isPressed, setIsPressed] = useState<boolean>(false);
-  const { stylesExtention } = useHD();
+  const { stylesExtention } = useRA();
   const moduleExtention = useModuleExtention(
     stylesExtention as TStylesExtension,
   ).moduleExtentionState;
