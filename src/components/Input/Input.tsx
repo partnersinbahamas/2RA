@@ -2,7 +2,6 @@ import React, { InputHTMLAttributes, useCallback } from 'react';
 import classNames from 'classnames';
 
 import { TStile } from '../utils/types/types';
-import defaultProps from '../utils/variables/defaultProps';
 import {
   Error,
   InputComponent,
@@ -11,7 +10,7 @@ import {
   Heading,
 } from './Input.styles';
 import styles from './Input.module.scss';
-import { useHD } from '../../providers/HDProvider';
+import { useRA } from '../../providers/RAProvider';
 import usePrime from '../../hooks/usePrime';
 import useModuleExtention from '../../hooks/useModuleExtention';
 
@@ -35,16 +34,18 @@ export const Input: React.FC<TProps> = ({
   onChange,
   onChangeValue,
   error,
-  stile = defaultProps.stile,
+  stile,
   disabled,
   className,
   ...props
 }) => {
-  const { stylesExtention } = useHD();
+  const { stylesExtention, componentsStile } = useRA();
   const moduleExtention = useModuleExtention(
     stylesExtention as TStylesExtension,
   ).moduleExtentionState;
-  const prime = usePrime(stile).primeState;
+
+  const visibleStile = stile || componentsStile;
+  const prime = usePrime(visibleStile).primeState;
 
   const label = title ? `${title}-label` : 'label';
   const isError = error ? 'true' : undefined;
@@ -82,13 +83,13 @@ export const Input: React.FC<TProps> = ({
     >
       <Label
         aria-label={label}
-        stile={stile}
+        stile={visibleStile}
         disabled={disabled}
         error={isError}
         className={classNames(prime && styles['label'], classes.label)}
       >
         <Heading
-          stile={stile}
+          stile={visibleStile}
           disabled={disabled}
           error={isError}
           className={classNames(prime && styles['heading'], classes.heading)}
@@ -97,7 +98,7 @@ export const Input: React.FC<TProps> = ({
         </Heading>
         <InputComponent
           {...props}
-          stile={stile}
+          stile={visibleStile}
           value={value}
           disabled={disabled}
           error={isError}

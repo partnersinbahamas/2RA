@@ -13,6 +13,17 @@ export interface IAnchorOrigin {
 
 export type TStile = 'primary' | 'default' | 'mute';
 
+export enum EStile {
+  PRIMARY = 'primary',
+  DEFAULT = 'default',
+  MUTE = 'mute',
+}
+
+export enum EStylesExtention {
+  SCSS = '.scss',
+  MODULES = '.module.scss',
+}
+
 export type TStringOrStatus = TStatus | string;
 export type TStatus =
   | 'online'

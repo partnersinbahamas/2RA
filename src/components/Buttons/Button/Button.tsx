@@ -5,6 +5,7 @@ import defaultProps from '../../utils/variables/defaultProps';
 import TPropsButton from '../../utils/types/props/button';
 import { TSize, TStile } from '../../utils/types/types';
 import { ButtonComponent } from './Button.styles';
+import { useRA } from '../../../providers/RAProvider';
 import styles from './Button.module.scss';
 
 export type TProps = TPropsButton & {
@@ -29,7 +30,7 @@ export type TProps = TPropsButton & {
 export const Button: React.FC<TProps> = ({
   size = defaultProps.size,
   type = defaultProps.buttonType,
-  stile = defaultProps.stile,
+  stile,
   disabled,
   error,
   className,
@@ -40,6 +41,7 @@ export const Button: React.FC<TProps> = ({
   ...props
 }) => {
   const isError = error ? 'true' : undefined;
+  const { componentsStile } = useRA();
 
   return (
     <ButtonComponent
@@ -48,7 +50,7 @@ export const Button: React.FC<TProps> = ({
       error={isError}
       disabled={disabled}
       className={classNames(styles[size], className)}
-      stile={stile}
+      stile={stile || componentsStile}
       style={{
         ...props.style,
         ...(disablePadding ? { padding: '0' } : {}),

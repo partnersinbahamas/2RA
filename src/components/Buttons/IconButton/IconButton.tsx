@@ -9,7 +9,7 @@ import {
 } from 'react';
 import classNames from 'classnames';
 
-import { useHD } from '../../../providers/HDProvider';
+import { useRA } from '../../../providers/RAProvider';
 import useModuleExtention from '../../../hooks/useModuleExtention';
 import TPropsButton from '../../utils/types/props/button';
 import defaultProps from '../../utils/variables/defaultProps';
@@ -42,7 +42,7 @@ const IconButton: FC<TProps> = ({
   children,
   className,
   size = defaultProps.size,
-  stile = defaultProps.stile,
+  stile,
   disablePadding = defaultProps.disablePadding,
   label,
   onClick,
@@ -56,10 +56,12 @@ const IconButton: FC<TProps> = ({
   const isError = error ? 'true' : undefined;
   const uniqId = `ibutton-${useId()}`;
   const [isPressed, setIsPressed] = useState<boolean>(false);
-  const { stylesExtention } = useHD();
+  const { stylesExtention, componentsStile } = useRA();
   const moduleExtention = useModuleExtention(
     stylesExtention as TStylesExtension,
   ).moduleExtentionState;
+
+  const visibleStile = stile || componentsStile;
 
   const modifiedChildren = Children.map(
     children ? children : [],
@@ -91,7 +93,7 @@ const IconButton: FC<TProps> = ({
       <Ripple
         data-testid="touch-ripple"
         error={isError}
-        className={classNames(classes.ripple, styles[`touch-${stile}`], {
+        className={classNames(classes.ripple, styles[`touch-${visibleStile}`], {
           [styles['touch-active']]: isPressed,
         })}
       />
@@ -118,7 +120,7 @@ const IconButton: FC<TProps> = ({
           disabled={disabled}
           htmlFor={uniqId}
           style={{ backgroundColor }}
-          className={classNames(styles[`label-${stile}`], classes.label)}
+          className={classNames(styles[`label-${visibleStile}`], classes.label)}
         >
           {label}
         </Label>
@@ -131,7 +133,7 @@ const IconButton: FC<TProps> = ({
         className={classNames(
           classes.button,
           styles.ibutton,
-          styles[`ibutton-${stile}`],
+          styles[`ibutton-${visibleStile}`],
           styles[size],
         )}
         error={disabled ? false : error}

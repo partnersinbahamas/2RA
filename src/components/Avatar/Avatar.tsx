@@ -3,7 +3,7 @@ import { AvatarSlots, Badge } from '@mui/material';
 import classNames from 'classnames';
 
 import useModuleExtention from '../../hooks/useModuleExtention';
-import { useHD } from '../../providers/HDProvider';
+import { useRA } from '../../providers/RAProvider';
 import useMute from '../../hooks/useMute';
 import AvatarComponent from '../2RA/AvatarComponent';
 import BoxComponent from '../2RA/BoxComponent';
@@ -48,20 +48,22 @@ export const Avatar: React.FC<IProps> = ({
   anchorOrigin = defaultProps.anchorOrigin,
   size = defaultProps.size,
   status = defaultProps.status,
-  stile = defaultProps.stile,
+  stile,
   onClick,
   src,
   className,
   ...props
 }) => {
-  const { muteState } = useMute(stile);
-  const { stylesExtention } = useHD();
+  const { stylesExtention, componentsStile } = useRA();
   const moduleExtention = useModuleExtention(
     stylesExtention as TStylesExtension,
   ).moduleExtentionState;
 
+  const visibleStile = stile || componentsStile;
+  const { muteState } = useMute(visibleStile);
+
   const fullName = `${firstName} ${lastName}`;
-  const isError = error ? 'true' : false;
+  const isError = error ? 'true' : undefined;
   const name =
     firstName && lastName ? `${firstName[0]}${lastName[0]}` : abbreviation;
 
@@ -86,11 +88,11 @@ export const Avatar: React.FC<IProps> = ({
 
   const styleses = useMemo(
     () => ({
-      avatar: stile && !muteState && styles[`avatar-${stile}`],
+      avatar: !muteState && styles[`avatar-${visibleStile}`],
       badge: badged && styles[`badge`],
       status: status && badged && !muteState && styles[status],
     }),
-    [stile, badged, status],
+    [visibleStile, badged, status],
   );
 
   if (!badged) {
@@ -99,7 +101,7 @@ export const Avatar: React.FC<IProps> = ({
         <AvatarComponent
           {...props}
           aria-label={`avatar ${name}`}
-          stile={stile && stile}
+          stile={visibleStile}
           disabled={disabled}
           error={isError}
           onClick={onClick}
@@ -147,7 +149,7 @@ export const Avatar: React.FC<IProps> = ({
       <AvatarComponent
         {...props}
         aria-label={`avatar ${name}`}
-        stile={stile && stile}
+        stile={visibleStile}
         error={isError}
         disabled={disabled}
         onClick={onClick}
