@@ -12,7 +12,7 @@ export default defineConfig({
     outDir: 'lib',
     lib: {
       entry: [
-        path.resolve(__dirname, 'src/index.ts'),
+        path.resolve(__dirname, 'src/lib.ts'),
       ],
       name: '2ra-ui',
       fileName: (format, name) => {
