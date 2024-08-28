@@ -1,20 +1,17 @@
 {
   "name": "2ra-ui",
-  "main": "./lib/index.umd.js",
-  "module": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./lib/lib.js",
+  "module": "./lib/lib.js",
+  "types": "./lib/lib.d.ts",
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./lib/index.js",
-      "require": "./lib/index.umd.js"
-    }
+    ".": "./lib/lib.js"
   },
   "files": [
     "/lib"
   ],
   "homepage": "https://github.com/partnersinbahamas/2RA",
-  "version": "0.1.5",
+  "version": "0.2.3",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",

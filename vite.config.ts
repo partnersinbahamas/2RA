@@ -21,13 +21,13 @@ export default defineConfig({
         }
 
         return `${name}.${format}.js`;
-      }
+      },
+      formats: ['es'],
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         inlineDynamicImports: false,
-        format: 'umd',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
