@@ -3,15 +3,16 @@ import Inspect from 'vite-plugin-inspect'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
+    outDir: 'lib',
     lib: {
       entry: [
-        path.resolve(__dirname, 'lib/main.ts'),
-        path.resolve(__dirname, 'lib/colors.ts'),
+        path.resolve(__dirname, 'src/lib.ts'),
       ],
       name: '2ra-ui',
       fileName: (format, name) => {
@@ -20,13 +21,13 @@ export default defineConfig({
         }
 
         return `${name}.${format}.js`;
-      }
+      },
+      formats: ['es'],
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         inlineDynamicImports: false,
-        format: 'umd',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
@@ -39,9 +40,7 @@ export default defineConfig({
     react(),
     Inspect(),
     tsconfigPaths(),
-    dts({
-      // insertTypesEntry: true,
-      rollupTypes: true,
-    }),
+    dts(),
+    libInjectCss(),
   ],
 })

@@ -1,26 +1,19 @@
 {
   "name": "2ra-ui",
-  "main": "./dist/main.cjs.js",
-  "module": "./dist/main.js",
-  "types": "./dist/main.d.ts",
-  "style": "./dist/style.css",
+  "main": "./lib/lib.js",
+  "module": "./lib/lib.js",
+  "types": "./lib/lib.d.ts",
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./dist/main.js",
-      "require": "./dist/main.cjs.js"
-    },
-    "./colors": {
-      "import": "./dist/colors.js",
-      "require": "./dist/colors.cjs.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+    ".": "./lib/lib.js",
+    "./css/colors": "./lib/components/utils/styles/colors.scss",
+    "./css/fonts": "./lib/components/utils/styles/fonts.scss"
   },
   "files": [
-    "dist"
+    "/lib"
   ],
   "homepage": "https://github.com/partnersinbahamas/2RA",
-  "version": "0.0.5",
+  "version": "0.2.5",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
@@ -34,6 +27,7 @@
     "@types/react-dom": "^18.2.21",
     "@vitejs/plugin-react": "^4.3.1",
     "classnames": "^2.5.1",
+    "copyfiles": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -41,6 +35,7 @@
     "styled-components": "^6.1.8",
     "typescript": "^4.9.5",
     "vite-plugin-inspect": "^0.8.5",
+    "vite-plugin-lib-inject-css": "^2.1.1",
     "vite-tsconfig-paths": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -48,8 +43,9 @@
     "dev": "vite",
     "start": "storybook dev -p 6006",
     "rbuild": "react-scripts build",
-    "build": "tsc -b && vite build",
-    "prebuild": "rm -rf dist",
+    "build": "tsc -b && vite build && npm run copy-files",
+    "prebuild": "rm -rf lib",
+    "copy-files": "copyfiles -u 1 src/components/utils/styles/colors.scss src/components/utils/styles/fonts.scss lib",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
