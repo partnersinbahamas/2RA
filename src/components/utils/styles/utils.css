@@ -12,6 +12,53 @@
   overflow: hidden !important;
 }
 
+
+/* Text */
+.text-sm {
+  font-size: 0.75rem !important;
+  line-height: 1rem !important;
+}
+
+.text-md {
+  font-size: 0.875rem !important;
+  line-height: 1.125rem !important;
+}
+
+.text-lg {
+  font-size: 1rem !important;
+  line-height: 1.25rem !important;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.italic {
+  font-style: italic !important;
+}
+
+.normal {
+  font-weight: normal !important;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+/* Width */
+
+.quarter-width {
+  width: 25% !important;
+}
+
+.half-width {
+  width: 50% !important;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
 /* Margins */
 .m-0 {
   margin: 0 !important;
