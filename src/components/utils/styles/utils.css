@@ -1,3 +1,17 @@
+/* Visibility */
+.hidden {
+  display: none !important;
+}
+
+.v-hidden {
+  visibility: hidden;
+}
+
+/* Overflow */
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
 /* Margins */
 
 .m-0 {
