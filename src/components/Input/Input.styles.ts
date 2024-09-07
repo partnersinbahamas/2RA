@@ -15,7 +15,7 @@ import { TProps } from './Input';
 const stiled = (stile?: TStile) => stile && !useMute(stile).muteState;
 
 const InputWrapper = styled.div<TProps>`
-  width: 100%;
+  width: 25rem;
   font-size: 0.75rem;
   box-sizing: border-box;
 
@@ -63,7 +63,6 @@ const Label = styled.label<TProps>`
     stiled(stile) &&
     `
     transition: .5s;
-    margin-bottom: 5px;
     font-weight: 600;
     font-size: 0.625rem;
     background-color: ${disabled ? COOL_GRAY_300 : COOL_GRAY_200};
@@ -72,6 +71,7 @@ const Label = styled.label<TProps>`
   `}
 `;
 const Error = styled.span<TProps>`
+  ${fontTuraRegular}
   color: ${RED_400};
 `;
 
@@ -80,6 +80,6 @@ const Heading = styled.h3<TProps>`
   margin: 0;
   transition: 0.5s;
 
-  ${({ stile, title }) => (stiled(stile) || title) && `margin: 3px`};
+  ${({ stile }) => stiled(stile) && `margin: 3px`};
 `;
 export { InputWrapper, InputComponent, Label, Error, Heading };
