@@ -45,7 +45,7 @@
     "rbuild": "react-scripts build",
     "build": "tsc -b && vite build && npm run copy-files",
     "prebuild": "rm -rf lib",
-    "copy-files": "copyfiles -u 1 src/components/utils/styles/colors.scss src/components/utils/styles/fonts.scss lib",
+    "copy-files": "copyfiles -u 1 src/components/utils/styles/colors.scss src/components/utils/styles/fonts.scss src/components/utils/styles/utils.css lib",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
