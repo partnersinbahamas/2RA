@@ -1,7 +1,16 @@
+import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 import { story } from '../../utils/variables/story';
 import { ArgTypes } from 'storybook/internal/types';
+import { DocsPage, Markdown, Source, Subtitle } from '@storybook/blocks';
+
+const BUTTON_BOTH_SCSS_STYLES = `
+button.button {
+  &[disabled] {};
+  &[error] {};
+}
+`;
 
 const meta = {
   title: 'Athomic/Buttons/Button',
@@ -19,24 +28,21 @@ const meta = {
   parameters: {
     layout: 'centered',
     docs: {
-      description: {
-        component: `
-Please to style your custom input component use the mockup bellow.
-### Guide styles
-  .scss
-
-  .module.scss
-
-  use the "button" prefix to make the class more specific
-
-    button.button {
-      &[disabled] {};
-      &[error] {};
-    }
-    `,
+      page: () => {
+        return (
+          <>
+            <Subtitle>
+              Please to style your custom Button component use the mockup
+              below.
+            </Subtitle>
+            <Markdown>Guide styles | .module.scss & .scss</Markdown>
+            <Source language="css" code={BUTTON_BOTH_SCSS_STYLES} />
+            <DocsPage />
+          </>
+        );
       },
     },
-  },
+  }
 } satisfies Meta<typeof Button>;
 export default meta;
 
