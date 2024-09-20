@@ -32,7 +32,8 @@ const meta = {
         return (
           <>
             <Subtitle>
-              Please to style your custom DisplayCount component use the mockup below.
+              Please to style your custom DisplayCount component use the mockup
+              below.
             </Subtitle>
 
             <Markdown>Guide styles | .module.scss</Markdown>

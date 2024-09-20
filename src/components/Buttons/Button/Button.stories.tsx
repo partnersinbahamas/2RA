@@ -32,8 +32,7 @@ const meta = {
         return (
           <>
             <Subtitle>
-              Please to style your custom Button component use the mockup
-              below.
+              Please to style your custom Button component use the mockup below.
             </Subtitle>
             <Markdown>Guide styles | .module.scss & .scss</Markdown>
             <Source language="css" code={BUTTON_BOTH_SCSS_STYLES} />
@@ -42,7 +41,7 @@ const meta = {
         );
       },
     },
-  }
+  },
 } satisfies Meta<typeof Button>;
 export default meta;
 
