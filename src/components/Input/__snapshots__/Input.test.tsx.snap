@@ -3,17 +3,13 @@
 exports[`Input renders correctly 1`] = `
 <div>
   <div
-    class="sc-beySPh bvAwne"
+    class="sc-beySPh eUcAOb"
   >
     <label
       aria-label="label"
-      class="sc-dmyCSP enyBlq undefined-label"
+      class="sc-dmyCSP ducgyw undefined-label"
       stile="default"
     >
-      <h3
-        class="sc-eDLKkx fLXAhb undefined-heading"
-        stile="default"
-      />
       <input
         class="sc-guDLey hJeQqt undefined-input"
         stile="default"
@@ -26,12 +22,12 @@ exports[`Input renders correctly 1`] = `
 exports[`Input renders on disabled 1`] = `
 <div>
   <div
-    class="sc-beySPh eITmsa"
+    class="sc-beySPh EuxbD"
     disabled=""
   >
     <label
       aria-label="Input-label"
-      class="sc-dmyCSP jRQXxX undefined-label"
+      class="sc-dmyCSP bsRVNR undefined-label"
       disabled=""
       stile="default"
     >
@@ -55,7 +51,7 @@ exports[`Input renders on disabled 1`] = `
 exports[`Input renders with each stile 1`] = `
 <div>
   <div
-    class="sc-beySPh bvAwne"
+    class="sc-beySPh eUcAOb"
   >
     <label
       aria-label="Input-label"
@@ -80,11 +76,11 @@ exports[`Input renders with each stile 1`] = `
 exports[`Input renders with each stile 2`] = `
 <div>
   <div
-    class="sc-beySPh bvAwne"
+    class="sc-beySPh eUcAOb"
   >
     <label
       aria-label="Input-label"
-      class="sc-dmyCSP enyBlq undefined-label"
+      class="sc-dmyCSP ducgyw undefined-label"
       stile="default"
     >
       <h3
@@ -105,11 +101,11 @@ exports[`Input renders with each stile 2`] = `
 exports[`Input renders with each stile 3`] = `
 <div>
   <div
-    class="sc-beySPh bvAwne"
+    class="sc-beySPh eUcAOb"
   >
     <label
       aria-label="Input-label"
-      class="sc-dmyCSP enyBlq label undefined-label"
+      class="sc-dmyCSP ducgyw label undefined-label"
       stile="primary"
     >
       <h3
@@ -130,20 +126,15 @@ exports[`Input renders with each stile 3`] = `
 exports[`Input renders with error 1`] = `
 <div>
   <div
-    class="sc-beySPh bvAwne"
+    class="sc-beySPh eUcAOb"
     error="true"
   >
     <label
       aria-label="label"
-      class="sc-dmyCSP enyBlq undefined-label"
+      class="sc-dmyCSP ducgyw undefined-label"
       error="true"
       stile="default"
     >
-      <h3
-        class="sc-eDLKkx fLXAhb undefined-heading"
-        error="true"
-        stile="default"
-      />
       <input
         class="sc-guDLey hJeQqt error undefined-input"
         error="true"
@@ -151,7 +142,7 @@ exports[`Input renders with error 1`] = `
       />
     </label>
     <span
-      class="sc-hLQSwg gpNhwr undefined-error-message"
+      class="sc-hLQSwg krvncp undefined-error-message"
     >
       error
     </span>

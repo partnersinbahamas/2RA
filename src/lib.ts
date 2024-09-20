@@ -22,5 +22,3 @@ export * from './components/utils/variables/fonts';
 export { default as useModuleExtention } from './hooks/useModuleExtention';
 export { default as useMute } from './hooks/useMute';
 export { default as usePrime } from './hooks/usePrime';
-
-

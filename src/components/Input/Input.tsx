@@ -88,14 +88,16 @@ export const Input: React.FC<TProps> = ({
         error={isError}
         className={classNames(prime && styles['label'], classes.label)}
       >
-        <Heading
-          stile={visibleStile}
-          disabled={disabled}
-          error={isError}
-          className={classNames(prime && styles['heading'], classes.heading)}
-        >
-          {title}
-        </Heading>
+        {title && (
+          <Heading
+            stile={visibleStile}
+            disabled={disabled}
+            error={isError}
+            className={classNames(prime && styles['heading'], classes.heading)}
+          >
+            {title}
+          </Heading>
+        )}
         <InputComponent
           {...props}
           stile={visibleStile}

@@ -1,13 +1,53 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import HDLogo from '../../images/logos/hd-logo-dark-small.png';
-import { Avatar } from '../Avatar/Avatar';
+import { Avatar } from './Avatar';
 import { story } from '../utils/variables/story';
 import { ArgTypes } from 'storybook/internal/types';
+import { DocsPage } from '@storybook/addon-docs';
+import { Markdown, Source, Subtitle } from '@storybook/blocks';
 
 /**
  * Avatar conponent with user picture and fullname.
  */
+
+const AVATAR_SCSS_STYLES = `
+.component {
+  .component-avatar {
+    &[disabled] {}
+    &[error] {};
+  };
+
+  .component-badge {
+    &[status="statusProp"] {
+      &[disabled] {};
+      &[error] {};
+    };
+  };
+
+  .component-abbreviation {
+    &[error] {};
+    &[disabled] {};
+  };
+}`;
+
+const AVATAR_MODULE_SCSS_STYLES = `
+div.avatar {
+  &[disabled] {};
+  &[error] {};
+};
+
+.badge {
+  &[status="statusProp"] {
+    &[disabled] {};
+    &[error] {};
+  };
+};
+
+.abbreviation {
+  &[error] {};
+  &[disabled] {};
+}`;
 
 const meta = {
   title: 'Athomic/Avatar',
@@ -17,6 +57,27 @@ const meta = {
     abbreviation: 'HD',
     anchorOrigin: { horizontal: 'right', vertical: 'bottom' },
     stile: 'default',
+  },
+  parameters: {
+    layout: 'centered',
+    docs: {
+      page: () => {
+        return (
+          <>
+            <Subtitle>
+              Please to style your custom Avatar component use the mockup
+              below.
+            </Subtitle>
+            <Markdown>Guide styles | .module.scss</Markdown>
+            <Source language="css" code={AVATAR_MODULE_SCSS_STYLES} />
+
+            <Markdown>Guide styles | .scss</Markdown>
+            <Source language="css" code={AVATAR_SCSS_STYLES} />
+            <DocsPage />
+          </>
+        );
+      },
+    },
   },
   argTypes: {
     firstName: story.name,
@@ -47,59 +108,6 @@ const meta = {
       },
     },
   } as ArgTypes,
-  parameters: {
-    layout: 'centered',
-    docs: {
-      description: {
-        component: `
-Please to style your custom input component use the mockup bellow.
-### Guide styles
-  .scss
-
-    .component {
-      .component-avatar {
-        &[disabled] {}
-        &[error] {};
-      };
-
-      .component-badge {
-        &[status="statusProp"] {
-          &[disabled] {};
-          &[error] {};
-        };
-      };
-
-      .component-abbreviation {
-        &[error] {};
-        &[disabled] {};
-      };
-    };
-    
-
-.module.scss
-
-  use the "div" prefix to make the class more specific
-
-    div.avatar {
-      &[disabled] {};
-      &[error] {};
-    };
-
-    .badge {
-      &[status="statusProp"] {
-        &[disabled] {};
-        &[error] {};
-      };
-    };
-
-    .abbreviation {
-      &[error] {};
-      &[disabled] {};
-    };
-`,
-      },
-    },
-  },
 } satisfies Meta<typeof Avatar>;
 export default meta;
 type TStory = StoryObj<typeof meta>;

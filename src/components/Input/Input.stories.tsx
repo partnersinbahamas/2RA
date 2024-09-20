@@ -1,3 +1,4 @@
+import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { within, userEvent } from '@storybook/test';
 
@@ -5,6 +6,59 @@ import { ConnectOnChange } from '../../../.storybook/decorators';
 import { story } from '../utils/variables/story';
 import { Input } from './Input';
 import { ArgTypes } from 'storybook/internal/types';
+import { DocsPage, Markdown, Source, Subtitle } from '@storybook/blocks';
+
+const INPUT_MODULE_SCSS_STYLES = `
+div.wrapper {
+  &[error] {};
+  &[disabled] {};
+}
+
+label.label {
+  &[error] {};
+  &[disabled] {};
+}
+
+h3.heading {
+  &[error] {};
+  &[disabled] {};
+}
+
+input.input {
+  &[error] {};
+  &[disabled] {};
+}
+
+span.error-message {
+  &[disabled] {};
+}
+`;
+
+const INPUT_SCSS_STYLES = `
+div.className {
+  &[error] {};
+  &[disabled] {};
+
+  .className-label {
+    &[error] {};
+    &[disabled] {};
+  };
+
+  .className-heading {
+    &[error] {};
+    &[disabled] {};
+  };
+
+  .className-input {
+    &[error] {};
+    &[disabled] {};
+  };
+
+  .className-error-message {
+    &[disabled] {};
+  };
+};
+`;
 
 const meta = {
   title: 'Athomic/Input',
@@ -25,70 +79,23 @@ const meta = {
     className: story.className,
   } as ArgTypes,
   parameters: {
+    layout: 'centered',
     docs: {
-      description: {
-        component: `
-Please to style your custom input component use the mockup bellow.
-### Guide styles
-  .scss
+      page: () => {
+        return (
+          <>
+            <Subtitle>
+              Please to style your custom Input component use the mockup bellow.
+              below.
+            </Subtitle>
+            <Markdown>Guide styles | .module.scss</Markdown>
+            <Source language="css" code={INPUT_MODULE_SCSS_STYLES} />
 
-    div.className {
-      &[error] {};
-      &[disabled] {};
-
-      .className-label {
-        &[error] {};
-        &[disabled] {};
-      };
-
-      .className-heading {
-        &[error] {};
-        &[disabled] {};
-      };
-
-      .className-input {
-        &[error] {};
-        &[disabled] {};
-      };
-
-      .className-error-message {
-        &[disabled] {};
-      };
-    };
-
-    import './myClassName.scss';
-    <Input className="className" />
-    
-
-.module.scss
-
-    div.wrapper {
-      &[error] {};
-      &[disabled] {};
-    }
-
-    label.label {
-      &[error] {};
-      &[disabled] {};
-    }
-
-    h3.heading {
-      &[error] {};
-      &[disabled] {};
-    }
-
-    input.input {
-      &[error] {};
-      &[disabled] {};
-    }
-
-    span.error-message {
-      &[disabled] {};
-    }
-
-    import styles from './myClassName.module.scss';
-    <Input className={styles} />
-`,
+            <Markdown>Guide styles | .scss</Markdown>
+            <Source language="css" code={INPUT_SCSS_STYLES} />
+            <DocsPage />
+          </>
+        );
       },
     },
   },
