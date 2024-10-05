@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch renders as required 1`] = `
+<div>
+  <div
+    class="switch-wrapper label-top"
+    data-stile="default"
+  >
+    <label
+      class="switch-label"
+      data-position="top"
+      for="switch-:r3:"
+    >
+      Switch
+      *
+    </label>
+    <input
+      class="sc-brSamD switch-input-default"
+      id="switch-:r3:"
+      required=""
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Switch renders correctly 1`] = `
+<div>
+  <div
+    class="switch-wrapper label-top"
+    data-stile="default"
+  >
+    <input
+      class="sc-brSamD switch-input-default"
+      id="switch-:r0:"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Switch renders with label 1`] = `
+<div>
+  <div
+    class="switch-wrapper label-top"
+    data-stile="default"
+  >
+    <label
+      class="switch-label"
+      data-position="top"
+      for="switch-:r1:"
+    >
+      Switch
+    </label>
+    <input
+      class="sc-brSamD switch-input-default"
+      id="switch-:r1:"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Switch renders with label position 1`] = `
+<div>
+  <div
+    class="switch-wrapper label-bottom"
+    data-stile="default"
+  >
+    <label
+      class="switch-label"
+      data-position="bottom"
+      for="switch-:r2:"
+    >
+      Switch
+    </label>
+    <input
+      class="sc-brSamD switch-input-default"
+      id="switch-:r2:"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Switch renders with stile 1`] = `
+<div>
+  <div
+    class="switch-wrapper label-top"
+    data-stile="primary"
+  >
+    <label
+      class="switch-label"
+      data-position="top"
+      for="switch-:r4:"
+    >
+      Switch
+    </label>
+    <input
+      class="sc-brSamD switch-input-primary"
+      id="switch-:r4:"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Switch should be clicked 1`] = `
+<div>
+  <div
+    class="switch-wrapper label-top"
+    data-stile="default"
+  >
+    <label
+      class="switch-label"
+      data-position="top"
+      for="switch-:r5:"
+    >
+      Switch
+    </label>
+    <input
+      class="sc-brSamD switch-input-default"
+      id="switch-:r5:"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Switch should be disabled 1`] = `
+<div>
+  <div
+    class="sc-csKJxZ jHCCer switch-wrapper label-top"
+    data-stile="default"
+    disabled=""
+    labelposition="top"
+  >
+    <label
+      class="sc-eTNRI switch-label"
+      data-position="top"
+      disabled=""
+      for="switch-:r6:"
+    >
+      Switch
+    </label>
+    <input
+      class="sc-brSamD switch-input-default"
+      disabled=""
+      id="switch-:r6:"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Switch should be rendered on error 1`] = `
+<div>
+  <div
+    class="sc-csKJxZ jHCCer switch-wrapper label-top"
+    data-stile="default"
+    error="true"
+    labelposition="top"
+  >
+    <label
+      class="sc-eTNRI switch-label"
+      data-position="top"
+      error="true"
+      for="switch-:r7:"
+    >
+      Switch
+    </label>
+    <input
+      class="sc-brSamD switch-input-default"
+      error="true"
+      id="switch-:r7:"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
