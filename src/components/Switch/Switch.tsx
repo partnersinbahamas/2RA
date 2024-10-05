@@ -9,8 +9,8 @@ import defaultProps from '../utils/variables/defaultProps';
 
 import styles from './Switch.module.scss';
 
-type TProps = {
-  label: string;
+export type TProps = {
+  label?: string;
   required?: boolean;
   defaultToggle?: boolean;
   stile?: TStile;
@@ -62,6 +62,7 @@ export const Switch: React.FC<TProps> = ({
 
   return (
     <div
+      data-stile={visibleStile}
       className={classNames(
         classes.wrapper,
         stiles.wrapper,
@@ -69,7 +70,11 @@ export const Switch: React.FC<TProps> = ({
       )}
     >
       {label && (
-        <label htmlFor={id} className={classNames(classes.label, stiles.label)}>
+        <label
+          htmlFor={id}
+          className={classNames(classes.label, stiles.label)}
+          data-position={labelPosition}
+        >
           {label}
           {required && '*'}
         </label>
