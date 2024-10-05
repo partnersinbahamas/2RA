@@ -17,6 +17,8 @@ const meta = {
     label: story.title,
     defaultToggle: story.boolean,
     required: story.boolean,
+    stile: story.stile,
+    labelPosition: story.labelPosition,
   } as ArgTypes,
   parameters: {
     layout: 'centered',
@@ -44,3 +46,5 @@ export default meta;
 
 type TStory = StoryObj<typeof meta>;
 export const DefaultSwitch: TStory = {};
+export const PrimarySwitch: TStory = { args: { stile: 'primary' } };
+export const MuteSwich: TStory = { args: { stile: 'mute' } };
