@@ -1,38 +1,114 @@
 @import '../utils/styles/styles.scss';
 @import '../utils/styles/fonts.scss';
 
-.label {
-  @extend %fontTuraRegular;
-  color: $cool_gray_600;
-  font-size: 0.75rem;
-}
-
-.input.input[type='checkbox'] {
+%base_input {
   appearance: none;
   cursor: pointer;
   border-radius: 0.75rem;
   margin: 0;
 
-  border: 0.15em solid $cool_gray_300;
+  border: 0.15em solid transparent;
   height: 1.55rem;
   width: 3rem;
   padding: 0.05rem 0.05rem;
-  background-color: $cool_gray_100;
   position: relative;
+}
 
-  &::before {
-    content: '';
-    box-sizing: border-box;
-    display: block;
-    width: 1.3rem;
-    height: 1.2rem;
-    border-radius: 50%;
-    background-color: $cool_gray_300;
-    transition: transform 0.15s;
-    transform: translateX(2%);
+%base_line {
+  content: '';
+  position: absolute;
+  top: 45%;
+  right: 0.25rem;
+  display: block;
+  height: 1.5px;
+  width: 0.85rem;
+}
+
+%base_check {
+  content: '';
+  box-sizing: border-box;
+  display: block;
+  width: 1.3rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: transform 0.15s;
+  transform: translateX(2%);
+}
+
+.switch-wrapper {
+  width: min-content;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.label-top {
+  flex-direction: column;
+}
+
+.label-bottom {
+  flex-direction: column-reverse;
+}
+
+.label-left {
+  flex-direction: row;
+}
+
+.label-right {
+  flex-direction: row-reverse;
+}
+
+.switch-label {
+  @extend %fontTuraRegular;
+  font-size: 0.75rem;
+  color: $cool_gray_600;
+}
+
+.switch-input {
+  &-default[type='checkbox'] {
+    @extend %base_input;
+
+    border-color: $cool_gray_400;
+    background-color: $cool_gray_200;
+
+    &::before {
+      @extend %base_check;
+      background-color: $cool_gray_300;
+      border-color: $cool_gray_400;
+    }
+
+    &:checked::before {
+      transform: translateX(100%);
+      background-color: $cool_gray_400;
+    }
+
+    &::after {
+      @extend %base_line;
+      background-color: $cool_gray_400;
+    }
   }
 
-  &:checked::before {
-    transform: translateX(100%);
+  &-primary[type='checkbox'] {
+    @extend %base_input;
+
+    border-color: $blue_300;
+    background-color: $blue_100;
+
+    &::before {
+      @extend %base_check;
+      background-color: $blue_200;
+      border-color: $blue_300;
+    }
+
+    &::after {
+      @extend %base_line;
+      background-color: $blue_300;
+    }
+
+    &:checked::before {
+      transform: translateX(100%);
+      background-color: $blue_300;
+    }
   }
 }
