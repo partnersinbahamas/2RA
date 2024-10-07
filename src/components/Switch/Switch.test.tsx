@@ -73,4 +73,19 @@ describe('Switch', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('should be disabled', async () => {
+    const { container } = render(<Switch {...props} disabled />);
+
+    const parentElement = screen.queryByText(props.label)?.parentElement;
+    expect(parentElement).toHaveAttribute('disabled');
+
+    const labelElement = screen.queryByText(props.label);
+    expect(labelElement).toHaveAttribute('disabled');
+
+    const inputElement = screen.getByLabelText(props.label);
+    expect(inputElement).toBeDisabled();
+
+    expect(container).toMatchSnapshot();
+  });
 });
