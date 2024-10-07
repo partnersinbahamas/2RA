@@ -19,6 +19,7 @@ const meta = {
     required: story.boolean,
     stile: story.stile,
     labelPosition: story.labelPosition,
+    disabled: story.boolean,
   } as ArgTypes,
   parameters: {
     layout: 'centered',
@@ -45,6 +46,34 @@ const meta = {
 export default meta;
 
 type TStory = StoryObj<typeof meta>;
-export const DefaultSwitch: TStory = {};
-export const PrimarySwitch: TStory = { args: { stile: 'primary' } };
-export const MuteSwich: TStory = { args: { stile: 'mute' } };
+export const Default: TStory = {};
+export const DefaultCheck: TStory = { args: { defaultToggle: true } };
+export const DefaultDisabled: TStory = { args: { disabled: true } };
+
+export const Primary: TStory = { args: { stile: 'primary' } };
+export const PrimaryCheck: TStory = {
+  args: {
+    stile: 'primary',
+    defaultToggle: true,
+  },
+};
+export const PrimaryDisabled: TStory = {
+  args: {
+    stile: 'primary',
+    disabled: true,
+  },
+};
+
+export const Mute: TStory = { args: { stile: 'mute' } };
+export const MuteCheck: TStory = {
+  args: {
+    stile: 'mute',
+    defaultToggle: true,
+  },
+};
+export const MuteDisabled: TStory = {
+  args: {
+    stile: 'mute',
+    disabled: true,
+  },
+};
