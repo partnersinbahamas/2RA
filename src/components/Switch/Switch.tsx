@@ -7,6 +7,8 @@ import { useRA } from '../../providers/RAProvider';
 import { IHorizontal, IVertical, TStile } from '../utils/types/types';
 import defaultProps from '../utils/variables/defaultProps';
 
+import { Wrapper, Label } from './Switch.styles';
+
 import styles from './Switch.module.scss';
 
 export type TProps = {
@@ -16,6 +18,7 @@ export type TProps = {
   stile?: TStile;
   className?: any;
   labelPosition?: IHorizontal | IVertical;
+  disabled?: boolean;
   onClick?: () => void;
 };
 
@@ -26,6 +29,7 @@ export const Switch: React.FC<TProps> = ({
   stile = defaultProps.stile,
   className,
   labelPosition = 'top',
+  disabled = false,
   onClick,
 }) => {
   const id = `switch-${useId()}`;
@@ -61,23 +65,26 @@ export const Switch: React.FC<TProps> = ({
   };
 
   return (
-    <div
+    <Wrapper
       data-stile={visibleStile}
       className={classNames(
         classes.wrapper,
         stiles.wrapper,
         styles[`label-${labelPosition}`],
       )}
+      disabled={disabled}
+      labelPosition={labelPosition}
     >
       {label && (
-        <label
+        <Label
           htmlFor={id}
           className={classNames(classes.label, stiles.label)}
           data-position={labelPosition}
+          disabled={disabled}
         >
           {label}
           {required && '*'}
-        </label>
+        </Label>
       )}
 
       <input
@@ -87,7 +94,8 @@ export const Switch: React.FC<TProps> = ({
         className={classNames(classes.input, stiles.input)}
         onClick={handleClick}
         checked={toggle}
+        disabled={disabled}
       />
-    </div>
+    </Wrapper>
   );
 };
