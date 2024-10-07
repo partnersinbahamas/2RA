@@ -65,8 +65,7 @@ const meta = {
         return (
           <>
             <Subtitle>
-              Please to style your custom Avatar component use the mockup
-              below.
+              Please to style your custom Avatar component use the mockup below.
             </Subtitle>
             <Markdown>Guide styles | .module.scss</Markdown>
             <Source language="css" code={AVATAR_MODULE_SCSS_STYLES} />
