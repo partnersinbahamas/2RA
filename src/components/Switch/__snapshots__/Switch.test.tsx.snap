@@ -3,11 +3,12 @@
 exports[`Switch renders as required 1`] = `
 <div>
   <div
-    class="switch-wrapper label-top"
+    class="sc-csKJxZ jHCCer switch-wrapper label-top"
     data-stile="default"
+    labelposition="top"
   >
     <label
-      class="switch-label"
+      class="sc-eTNRI switch-label"
       data-position="top"
       for="switch-:r3:"
     >
@@ -27,8 +28,9 @@ exports[`Switch renders as required 1`] = `
 exports[`Switch renders correctly 1`] = `
 <div>
   <div
-    class="switch-wrapper label-top"
+    class="sc-csKJxZ jHCCer switch-wrapper label-top"
     data-stile="default"
+    labelposition="top"
   >
     <input
       class="switch-input-default"
@@ -42,11 +44,12 @@ exports[`Switch renders correctly 1`] = `
 exports[`Switch renders with label 1`] = `
 <div>
   <div
-    class="switch-wrapper label-top"
+    class="sc-csKJxZ jHCCer switch-wrapper label-top"
     data-stile="default"
+    labelposition="top"
   >
     <label
-      class="switch-label"
+      class="sc-eTNRI switch-label"
       data-position="top"
       for="switch-:r1:"
     >
@@ -64,11 +67,12 @@ exports[`Switch renders with label 1`] = `
 exports[`Switch renders with label position 1`] = `
 <div>
   <div
-    class="switch-wrapper label-bottom"
+    class="sc-csKJxZ jNLeqS switch-wrapper label-bottom"
     data-stile="default"
+    labelposition="bottom"
   >
     <label
-      class="switch-label"
+      class="sc-eTNRI switch-label"
       data-position="bottom"
       for="switch-:r2:"
     >
@@ -86,11 +90,12 @@ exports[`Switch renders with label position 1`] = `
 exports[`Switch renders with stile 1`] = `
 <div>
   <div
-    class="switch-wrapper label-top"
+    class="sc-csKJxZ jHCCer switch-wrapper label-top"
     data-stile="primary"
+    labelposition="top"
   >
     <label
-      class="switch-label"
+      class="sc-eTNRI switch-label"
       data-position="top"
       for="switch-:r4:"
     >
@@ -108,11 +113,12 @@ exports[`Switch renders with stile 1`] = `
 exports[`Switch should be clicked 1`] = `
 <div>
   <div
-    class="switch-wrapper label-top"
+    class="sc-csKJxZ jHCCer switch-wrapper label-top"
     data-stile="default"
+    labelposition="top"
   >
     <label
-      class="switch-label"
+      class="sc-eTNRI switch-label"
       data-position="top"
       for="switch-:r5:"
     >
@@ -121,6 +127,32 @@ exports[`Switch should be clicked 1`] = `
     <input
       class="switch-input-default"
       id="switch-:r5:"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Switch should be disabled 1`] = `
+<div>
+  <div
+    class="sc-csKJxZ jHCCer switch-wrapper label-top"
+    data-stile="default"
+    disabled=""
+    labelposition="top"
+  >
+    <label
+      class="sc-eTNRI switch-label"
+      data-position="top"
+      disabled=""
+      for="switch-:r6:"
+    >
+      Switch
+    </label>
+    <input
+      class="switch-input-default"
+      disabled=""
+      id="switch-:r6:"
       type="checkbox"
     />
   </div>
