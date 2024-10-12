@@ -1,0 +1,189 @@
+@import '../utils/styles/styles.scss';
+@import '../utils/styles/fonts.scss';
+
+%base_input {
+  appearance: none;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  margin: 0;
+
+  border: 0.15em solid transparent;
+  height: 1.55rem;
+  width: 3rem;
+  padding: 0.05rem 0.05rem;
+  position: relative;
+}
+
+%base_line {
+  content: '';
+  position: absolute;
+  top: 45%;
+  right: 0.25rem;
+  display: block;
+  height: 1.5px;
+  width: 0.85rem;
+}
+
+%base_check {
+  content: '';
+  box-sizing: border-box;
+  display: block;
+  width: 1.3rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: transform 0.15s;
+  transform: translateX(2%);
+}
+
+%base_error {
+  border-color: $red_400;
+  background-color: $red_100;
+
+  &::before {
+    @extend %base_check;
+
+    border-color: $red_400;
+    background-color: $red_300;
+  }
+
+  &:checked::before {
+    transform: translateX(100%);
+    background-color: $red_300;
+  }
+
+  &::after {
+    @extend %base_line;
+    background-color: $red_400;
+  }
+
+  &:checked::after {
+    @extend %base_line;
+    left: 0.25rem;
+    background-color: transparent;
+  }
+}
+
+.switch-wrapper {
+  &[disabled] {
+    cursor: not-allowed;
+
+    * {
+      cursor: inherit;
+    }
+  }
+}
+
+.switch-label {
+  @extend %fontTuraRegular;
+  font-size: 0.75rem;
+  color: $cool_gray_600;
+}
+
+.switch-input {
+  &-default[type='checkbox'] {
+    @extend %base_input;
+
+    border-color: $cool_gray_400;
+    background-color: $cool_gray_200;
+
+    &::before {
+      @extend %base_check;
+      background-color: $cool_gray_300;
+      border-color: $cool_gray_400;
+    }
+
+    &:checked::before {
+      transform: translateX(100%);
+      background-color: $cool_gray_400;
+    }
+
+    &::after {
+      @extend %base_line;
+      background-color: $cool_gray_400;
+    }
+
+    &[error] {
+      @extend %base_error;
+    }
+
+    &[disabled] {
+      border-color: $cool_gray_400;
+      background-color: $cool_gray_300;
+
+      &::before {
+        @extend %base_check;
+        background-color: $cool_gray_400;
+        border-color: $cool_gray_200;
+      }
+
+      &:checked::before {
+        transform: translateX(100%);
+        background-color: $cool_gray_400;
+      }
+
+      &::after {
+        @extend %base_line;
+        background-color: $cool_gray_200;
+      }
+
+      &:checked::after {
+        @extend %base_line;
+        left: 0.25rem;
+        background-color: $cool_gray_200;
+      }
+    }
+  }
+
+  &-primary[type='checkbox'] {
+    @extend %base_input;
+
+    border-color: $blue_300;
+    background-color: $blue_100;
+
+    &::before {
+      @extend %base_check;
+      background-color: $blue_200;
+      border-color: $blue_300;
+    }
+
+    &::after {
+      @extend %base_line;
+      background-color: $blue_300;
+    }
+
+    &:checked::before {
+      background-color: $blue_300;
+      transform: translateX(100%);
+    }
+
+    &[error] {
+      @extend %base_error;
+    }
+
+    &[disabled] {
+      border-color: $blue_400;
+      background-color: $blue_300;
+
+      &::before {
+        @extend %base_check;
+        background-color: $blue_400;
+        border-color: $blue_200;
+      }
+
+      &:checked::before {
+        transform: translateX(100%);
+      }
+
+      &::after {
+        @extend %base_line;
+        background-color: $blue_200;
+      }
+
+      &:checked::after {
+        @extend %base_line;
+        left: 0.25rem;
+      }
+    }
+  }
+}
