@@ -1,4 +1,4 @@
-import React, { useId, useState } from 'react';
+import React, { InputHTMLAttributes, useId, useState } from 'react';
 import classNames from 'classnames';
 
 import { useModuleExtention } from '../../lib';
@@ -7,11 +7,11 @@ import { useRA } from '../../providers/RAProvider';
 import { IHorizontal, IVertical, TStile } from '../utils/types/types';
 import defaultProps from '../utils/variables/defaultProps';
 
-import { Wrapper, Label } from './Switch.styles';
+import { Wrapper, Label, Input } from './Switch.styles';
 
 import styles from './Switch.module.scss';
 
-export type TProps = {
+export interface TProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   required?: boolean;
   defaultToggle?: boolean;
@@ -19,8 +19,9 @@ export type TProps = {
   className?: any;
   labelPosition?: IHorizontal | IVertical;
   disabled?: boolean;
-  onClick?: () => void;
-};
+  error?: TError;
+  onChange?: () => void;
+}
 
 export const Switch: React.FC<TProps> = ({
   label,
@@ -30,7 +31,9 @@ export const Switch: React.FC<TProps> = ({
   className,
   labelPosition = 'top',
   disabled = false,
-  onClick,
+  error,
+  onChange,
+  ...props
 }) => {
   const id = `switch-${useId()}`;
 
@@ -41,6 +44,7 @@ export const Switch: React.FC<TProps> = ({
   ).moduleExtentionState;
 
   const visibleStile = stile || componentsStile;
+  const isError = error ? 'true' : undefined;
 
   const classes = {
     wrapper:
@@ -59,8 +63,8 @@ export const Switch: React.FC<TProps> = ({
     input: styles[`switch-input-${visibleStile}`],
   };
 
-  const handleClick = () => {
-    if (onClick) onClick();
+  const handleChange = () => {
+    if (onChange) onChange();
     setToggle(current => !current);
   };
 
@@ -74,6 +78,7 @@ export const Switch: React.FC<TProps> = ({
       )}
       disabled={disabled}
       labelPosition={labelPosition}
+      error={isError}
     >
       {label && (
         <Label
@@ -81,20 +86,23 @@ export const Switch: React.FC<TProps> = ({
           className={classNames(classes.label, stiles.label)}
           data-position={labelPosition}
           disabled={disabled}
+          error={isError}
         >
           {label}
           {required && '*'}
         </Label>
       )}
 
-      <input
+      <Input
+        {...props}
         id={id}
         type="checkbox"
         required={required}
         className={classNames(classes.input, stiles.input)}
-        onClick={handleClick}
+        onChange={handleChange}
         checked={toggle}
         disabled={disabled}
+        error={isError}
       />
     </Wrapper>
   );

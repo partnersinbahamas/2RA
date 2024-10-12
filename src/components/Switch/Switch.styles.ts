@@ -5,6 +5,7 @@ import { IHorizontal, IVertical } from '../utils/types/types';
 export const Wrapper = styled.div<{
   labelPosition: IVertical | IHorizontal;
   disabled: boolean;
+  error: 'true' | undefined;
 }>`
   width: min-content;
   display: flex;
@@ -25,4 +26,9 @@ export const Wrapper = styled.div<{
   }}
 `;
 
-export const Label = styled.label<{ disabled: boolean }>``;
+export const Label = styled.label<{
+  disabled: boolean;
+  error: 'true' | undefined;
+}>``;
+
+export const Input = styled.input<{ error: 'true' | undefined }>``;
