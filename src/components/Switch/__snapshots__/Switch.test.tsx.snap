@@ -16,7 +16,7 @@ exports[`Switch renders as required 1`] = `
       *
     </label>
     <input
-      class="switch-input-default"
+      class="sc-brSamD switch-input-default"
       id="switch-:r3:"
       required=""
       type="checkbox"
@@ -33,7 +33,7 @@ exports[`Switch renders correctly 1`] = `
     labelposition="top"
   >
     <input
-      class="switch-input-default"
+      class="sc-brSamD switch-input-default"
       id="switch-:r0:"
       type="checkbox"
     />
@@ -56,7 +56,7 @@ exports[`Switch renders with label 1`] = `
       Switch
     </label>
     <input
-      class="switch-input-default"
+      class="sc-brSamD switch-input-default"
       id="switch-:r1:"
       type="checkbox"
     />
@@ -79,7 +79,7 @@ exports[`Switch renders with label position 1`] = `
       Switch
     </label>
     <input
-      class="switch-input-default"
+      class="sc-brSamD switch-input-default"
       id="switch-:r2:"
       type="checkbox"
     />
@@ -102,7 +102,7 @@ exports[`Switch renders with stile 1`] = `
       Switch
     </label>
     <input
-      class="switch-input-primary"
+      class="sc-brSamD switch-input-primary"
       id="switch-:r4:"
       type="checkbox"
     />
@@ -125,7 +125,7 @@ exports[`Switch should be clicked 1`] = `
       Switch
     </label>
     <input
-      class="switch-input-default"
+      class="sc-brSamD switch-input-default"
       id="switch-:r5:"
       type="checkbox"
     />
@@ -150,9 +150,35 @@ exports[`Switch should be disabled 1`] = `
       Switch
     </label>
     <input
-      class="switch-input-default"
+      class="sc-brSamD switch-input-default"
       disabled=""
       id="switch-:r6:"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Switch should be rendered on error 1`] = `
+<div>
+  <div
+    class="sc-csKJxZ jHCCer switch-wrapper label-top"
+    data-stile="default"
+    error="true"
+    labelposition="top"
+  >
+    <label
+      class="sc-eTNRI switch-label"
+      data-position="top"
+      error="true"
+      for="switch-:r7:"
+    >
+      Switch
+    </label>
+    <input
+      class="sc-brSamD switch-input-default"
+      error="true"
+      id="switch-:r7:"
       type="checkbox"
     />
   </div>
