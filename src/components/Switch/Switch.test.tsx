@@ -9,7 +9,7 @@ describe('Switch', () => {
 
   const props = {
     label: 'Switch',
-    onClick: jest.fn(),
+    onChange: jest.fn(),
   };
 
   it('renders correctly', () => {
@@ -69,7 +69,7 @@ describe('Switch', () => {
 
     const inputElement = screen.getByLabelText(props.label);
     await user.click(inputElement);
-    expect(props.onClick).toHaveBeenCalled();
+    expect(props.onChange).toHaveBeenCalled();
 
     expect(container).toMatchSnapshot();
   });
@@ -85,6 +85,21 @@ describe('Switch', () => {
 
     const inputElement = screen.getByLabelText(props.label);
     expect(inputElement).toBeDisabled();
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should be rendered on error', () => {
+    const { container } = render(<Switch {...props} error />);
+
+    const parentElement = screen.queryByText(props.label)?.parentElement;
+    expect(parentElement).toHaveAttribute('error', 'true');
+
+    const labelElement = screen.queryByText(props.label);
+    expect(labelElement).toHaveAttribute('error', 'true');
+
+    const inputElement = screen.getByLabelText(props.label);
+    expect(inputElement).toHaveAttribute('error', 'true');
 
     expect(container).toMatchSnapshot();
   });
