@@ -1,9 +1,71 @@
 import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
-import { Switch } from './Switch';
-import { story } from '../utils/variables/story';
 import { ArgTypes } from 'storybook/internal/types';
-import { DocsPage, Subtitle } from '@storybook/blocks';
+
+import { Meta, StoryObj } from '@storybook/react';
+import { DocsPage, Markdown, Source, Subtitle } from '@storybook/blocks';
+
+import { story } from '../utils/variables/story';
+
+import { Switch } from './Switch';
+
+const SWITCH_MODULE_SCSS_STYLES = `
+.wrapper {
+  &[error] {};
+  &[disabled] {};
+}
+
+.label {
+  &[error] {};
+  &[disabled] {};
+}
+
+input.input[type='checkbox'] {
+  /* switch circle */
+  &::before {};
+
+  /* checked switch circle */
+  &:checked::before {};
+
+  /* switch line indicator */
+  &::after {};
+
+  /* checked switch line indicator */
+  &:checked::after {};
+
+  &[error] {};
+  &[disabled] {};
+}
+`;
+
+const SWITCH_SCSS_STYLES = `
+.className {
+  &[error] {};
+  &[disabled] {};
+
+  .className-label {
+    &[error] {};
+    &[disabled] {};
+  }
+
+  .className-input[type='checkbox'] {
+    /* switch circle */
+    &::before {};
+
+    /* checked switch circle */
+    &:checked::before {};
+
+    /* switch line indicator */
+    &::after {};
+
+    /* checked switch line indicator */
+    &:checked::after {};
+
+    &[error] {};
+    &[disabled] {};
+  }
+}
+
+`;
 
 const meta = {
   component: Switch,
@@ -13,13 +75,14 @@ const meta = {
     label: 'Switch',
   },
   argTypes: {
-    onClick: story.onClick,
+    onChage: story.onChange,
     label: story.title,
     defaultToggle: story.boolean,
     required: story.boolean,
     stile: story.stile,
     labelPosition: story.labelPosition,
     disabled: story.boolean,
+    error: story.stringError,
   } as ArgTypes,
   parameters: {
     layout: 'centered',
@@ -28,14 +91,14 @@ const meta = {
         return (
           <>
             <Subtitle>
-              Please to style your custom Input component use the mockup bellow.
-              below.
+              Please to style your custom Switch component use the mockup
+              bellow. below.
             </Subtitle>
-            {/* <Markdown>Guide styles | .module.scss</Markdown>
-            <Source language="css" code={INPUT_MODULE_SCSS_STYLES} />
+            <Markdown>Guide styles | .module.scss</Markdown>
+            <Source language="css" code={SWITCH_MODULE_SCSS_STYLES} />
 
             <Markdown>Guide styles | .scss</Markdown>
-            <Source language="css" code={INPUT_SCSS_STYLES} /> */}
+            <Source language="css" code={SWITCH_SCSS_STYLES} />
             <DocsPage />
           </>
         );
@@ -47,6 +110,7 @@ export default meta;
 
 type TStory = StoryObj<typeof meta>;
 export const Default: TStory = {};
+export const Error: TStory = { args: { error: true } };
 export const DefaultCheck: TStory = { args: { defaultToggle: true } };
 export const DefaultDisabled: TStory = { args: { disabled: true } };
 
